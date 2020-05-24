@@ -6,7 +6,8 @@
 class SaveAsCommand : public ICommand
 {
 public:
-	virtual std::string execute() override;
+	virtual std::string execute(const std::vector<std::string>&) override;
+	virtual std::string toString() override;
 };
 
 #endif // !SAVE_AS_COMMAND_H

@@ -188,6 +188,7 @@
     <ClInclude Include="FileWriter.h" />
     <ClInclude Include="HelpCommand.h" />
     <ClInclude Include="ICommand.h" />
+    <ClInclude Include="ICommandParser.h" />
     <ClInclude Include="IterCommand.h" />
     <ClInclude Include="ListCommand.h" />
     <ClInclude Include="OpenCommand.h" />

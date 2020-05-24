@@ -1,6 +1,11 @@
 #include "PrintCommand.h"
 
-std::string PrintCommand::execute()
+std::string PrintCommand::execute(const std::vector<std::string>&)
+{
+	return std::string();
+}
+
+std::string PrintCommand::toString()
 {
 	return std::string();
 }
