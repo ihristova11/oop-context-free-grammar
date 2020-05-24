@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AddRuleCommand.cpp" />
     <ClCompile Include="CloseCommand.cpp" />
     <ClCompile Include="CommandParser.cpp" />
     <ClCompile Include="Engine.cpp" />
@@ -155,13 +156,17 @@
     <ClCompile Include="FileWriter.cpp" />
     <ClCompile Include="HelpCommand.cpp" />
     <ClCompile Include="ICommand.cpp" />
+    <ClCompile Include="ListCommand.cpp" />
     <ClCompile Include="OpenCommand.cpp" />
+    <ClCompile Include="PrintCommand.cpp" />
+    <ClCompile Include="RemoveRuleCommand.cpp" />
     <ClCompile Include="SaveAsCommand.cpp" />
     <ClCompile Include="SaveCommand.cpp" />
     <ClCompile Include="Startup.cpp" />
     <ClCompile Include="Validator.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AddRuleCommand.h" />
     <ClInclude Include="CloseCommand.h" />
     <ClInclude Include="CommandParser.h" />
     <ClInclude Include="Constants.h" />
@@ -171,7 +176,10 @@
     <ClInclude Include="FileWriter.h" />
     <ClInclude Include="HelpCommand.h" />
     <ClInclude Include="ICommand.h" />
+    <ClInclude Include="ListCommand.h" />
     <ClInclude Include="OpenCommand.h" />
+    <ClInclude Include="PrintCommand.h" />
+    <ClInclude Include="RemoveRuleCommand.h" />
     <ClInclude Include="SaveAsCommand.h" />
     <ClInclude Include="SaveCommand.h" />
     <ClInclude Include="Validator.h" />
