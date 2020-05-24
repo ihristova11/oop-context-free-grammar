@@ -28,6 +28,18 @@
     <Filter Include="Header Files\Common">
       <UniqueIdentifier>{2edbee8e-9ad2-4a8b-870e-d17b6e7f9ce2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Commands">
+      <UniqueIdentifier>{c1b1ada2-5088-452b-9156-ace4604854c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Commands">
+      <UniqueIdentifier>{0431c701-40c7-4f6f-8d12-0734f7fb985c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Commands\FileCommands">
+      <UniqueIdentifier>{079a4d31-a662-4c98-b6a3-a68449938c5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Commands\FileCommands">
+      <UniqueIdentifier>{33445b4e-4ddc-4106-a9a8-b36fd31583be}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Startup.cpp">
@@ -48,6 +60,27 @@
     <ClCompile Include="Validator.cpp">
       <Filter>Source Files\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="CloseCommand.cpp">
+      <Filter>Source Files\Commands\FileCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ExitCommand.cpp">
+      <Filter>Source Files\Commands\FileCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="HelpCommand.cpp">
+      <Filter>Source Files\Commands\FileCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="SaveAsCommand.cpp">
+      <Filter>Source Files\Commands\FileCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenCommand.cpp">
+      <Filter>Source Files\Commands\FileCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="SaveCommand.cpp">
+      <Filter>Source Files\Commands\FileCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ICommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.h">
@@ -67,6 +100,27 @@
     </ClInclude>
     <ClInclude Include="Constants.h">
       <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenCommand.h">
+      <Filter>Header Files\Commands\FileCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ICommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="CloseCommand.h">
+      <Filter>Header Files\Commands\FileCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="SaveCommand.h">
+      <Filter>Header Files\Commands\FileCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="SaveAsCommand.h">
+      <Filter>Header Files\Commands\FileCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="HelpCommand.h">
+      <Filter>Header Files\Commands\FileCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ExitCommand.h">
+      <Filter>Header Files\Commands\FileCommands</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
