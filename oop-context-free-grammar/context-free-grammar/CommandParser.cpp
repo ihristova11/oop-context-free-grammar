@@ -1,5 +1,24 @@
 #include "CommandParser.h"
 
+#include "AddRuleCommand.h"
+#include "ChomskifyCommand.h"
+#include "ChomskyCommand.h"
+#include "ConcatCommand.h"
+#include "CykCommand.h"
+#include "EmptyCommand.h"
+#include "IterCommand.h"
+#include "ListCommand.h"
+#include "PrintCommand.h"
+#include "RemoveRuleCommand.h"
+#include "UnionCommand.h"
+
+#include "OpenCommand.h"
+#include "ExitCommand.h"
+#include "CloseCommand.h"
+#include "SaveAsCommand.h"
+#include "SaveCommand.h"
+#include "HelpCommand.h"
+
 CommandParser::CommandParser(FileReader* reader, FileWriter* writer)
 	: reader(reader), writer(writer)
 {
@@ -37,6 +56,25 @@ std::vector<std::string> CommandParser::parseParameters(const std::string& fullC
 void CommandParser::seedCommands()
 {
 	// register commands
+	this->commands.push_back(new AddRuleCommand());
+	this->commands.push_back(new ChomskifyCommand());
+	this->commands.push_back(new ChomskyCommand());
+	this->commands.push_back(new ConcatCommand());
+	this->commands.push_back(new CykCommand());
+	this->commands.push_back(new EmptyCommand());
+	this->commands.push_back(new IterCommand());
+	this->commands.push_back(new ListCommand());
+	this->commands.push_back(new PrintCommand());
+	this->commands.push_back(new RemoveRuleCommand());
+	this->commands.push_back(new UnionCommand());
+
+	this->commands.push_back(new OpenCommand());
+	this->commands.push_back(new CloseCommand());
+	this->commands.push_back(new ExitCommand());
+	this->commands.push_back(new HelpCommand());
+	this->commands.push_back(new SaveAsCommand());
+	this->commands.push_back(new SaveCommand());
+
 }
 
 template <typename T>

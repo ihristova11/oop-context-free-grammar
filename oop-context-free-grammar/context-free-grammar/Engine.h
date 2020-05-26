@@ -4,6 +4,7 @@
 #include "FileReader.h"
 #include "ICommandParser.h"
 #include "FileWriter.h"
+#include "Grammar.h"
 
 #include <string>
 #include <vector>
@@ -20,6 +21,7 @@ private:
 	Engine();
 	virtual ~Engine();
 
+	std::vector<Grammar*> grammars;
 	std::vector<ICommand*> commands;
 	ICommandParser* parser;
 	FileWriter* writer;
