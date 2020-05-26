@@ -75,16 +75,87 @@ Inheritance diagram for AddRuleCommand:</div>
  <div class="center">
   <img src="class_add_rule_command.png" usemap="#AddRuleCommand_map" alt=""/>
   <map id="AddRuleCommand_map" name="AddRuleCommand_map">
-<area href="class_i_command.html" alt="ICommand" shape="rect" coords="0,0,115,24"/>
+<area href="class_i_command.html" title="ICommand interface to be implemented by different command instances" alt="ICommand" shape="rect" coords="0,0,115,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a456f0542274414c2348bb767880d0aa4"><td class="memItemLeft" align="right" valign="top"><a id="a456f0542274414c2348bb767880d0aa4"></a>
-virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>execute</b> () override</td></tr>
-<tr class="separator:a456f0542274414c2348bb767880d0aa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd6945009fda7174246e2073c7511895"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_add_rule_command.html#acd6945009fda7174246e2073c7511895">execute</a> (const std::vector&lt; std::string &gt; &amp;) override</td></tr>
+<tr class="memdesc:acd6945009fda7174246e2073c7511895"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_add_rule_command.html#acd6945009fda7174246e2073c7511895" title="execute() contains command specific execution logic">execute()</a> contains command specific execution logic  <a href="class_add_rule_command.html#acd6945009fda7174246e2073c7511895">More...</a><br /></td></tr>
+<tr class="separator:acd6945009fda7174246e2073c7511895"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a307130bff294a331603277d9f7faadbe"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_add_rule_command.html#a307130bff294a331603277d9f7faadbe">toString</a> () override</td></tr>
+<tr class="memdesc:a307130bff294a331603277d9f7faadbe"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_add_rule_command.html#a307130bff294a331603277d9f7faadbe" title="toString() implementation on command class">toString()</a> implementation on command class  <a href="class_add_rule_command.html#a307130bff294a331603277d9f7faadbe">More...</a><br /></td></tr>
+<tr class="separator:a307130bff294a331603277d9f7faadbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="acd6945009fda7174246e2073c7511895"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd6945009fda7174246e2073c7511895">&#9670;&nbsp;</a></span>execute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string AddRuleCommand::execute </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_add_rule_command.html#acd6945009fda7174246e2073c7511895" title="execute() contains command specific execution logic">execute()</a> contains command specific execution logic </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parameters</td><td>vector of string values</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a string containing the execution message</dd></dl>
+
+<p>Implements <a class="el" href="class_i_command.html#a14396725824145bbe47c378cc4b484cd">ICommand</a>.</p>
+
+</div>
+</div>
+<a id="a307130bff294a331603277d9f7faadbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a307130bff294a331603277d9f7faadbe">&#9670;&nbsp;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string AddRuleCommand::toString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_add_rule_command.html#a307130bff294a331603277d9f7faadbe" title="toString() implementation on command class">toString()</a> implementation on command class </p>
+<dl class="section return"><dt>Returns</dt><dd>the command name</dd></dl>
+
+<p>Implements <a class="el" href="class_i_command.html#ac042a2d4560ede21e8089173d5c64197">ICommand</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>D:/Git/oop-context-free-grammar/oop-context-free-grammar/context-free-grammar/<a class="el" href="_add_rule_command_8h_source.html">AddRuleCommand.h</a></li>
 <li>D:/Git/oop-context-free-grammar/oop-context-free-grammar/context-free-grammar/AddRuleCommand.cpp</li>

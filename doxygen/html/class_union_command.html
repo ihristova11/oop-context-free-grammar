@@ -75,16 +75,87 @@ Inheritance diagram for UnionCommand:</div>
  <div class="center">
   <img src="class_union_command.png" usemap="#UnionCommand_map" alt=""/>
   <map id="UnionCommand_map" name="UnionCommand_map">
-<area href="class_i_command.html" alt="ICommand" shape="rect" coords="0,0,99,24"/>
+<area href="class_i_command.html" title="ICommand interface to be implemented by different command instances" alt="ICommand" shape="rect" coords="0,0,99,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa2545ed004d18fd17c014c0c6ef060d0"><td class="memItemLeft" align="right" valign="top"><a id="aa2545ed004d18fd17c014c0c6ef060d0"></a>
-virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>execute</b> () override</td></tr>
-<tr class="separator:aa2545ed004d18fd17c014c0c6ef060d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74b311660ac926c6277d60d86132a7bf"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_union_command.html#a74b311660ac926c6277d60d86132a7bf">execute</a> (const std::vector&lt; std::string &gt; &amp;) override</td></tr>
+<tr class="memdesc:a74b311660ac926c6277d60d86132a7bf"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_union_command.html#a74b311660ac926c6277d60d86132a7bf" title="execute() contains command specific execution logic">execute()</a> contains command specific execution logic  <a href="class_union_command.html#a74b311660ac926c6277d60d86132a7bf">More...</a><br /></td></tr>
+<tr class="separator:a74b311660ac926c6277d60d86132a7bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedb03b4bb4e927f74ab02e014e7ea861"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_union_command.html#aedb03b4bb4e927f74ab02e014e7ea861">toString</a> () override</td></tr>
+<tr class="memdesc:aedb03b4bb4e927f74ab02e014e7ea861"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_union_command.html#aedb03b4bb4e927f74ab02e014e7ea861" title="toString() implementation on command class">toString()</a> implementation on command class  <a href="class_union_command.html#aedb03b4bb4e927f74ab02e014e7ea861">More...</a><br /></td></tr>
+<tr class="separator:aedb03b4bb4e927f74ab02e014e7ea861"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a74b311660ac926c6277d60d86132a7bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74b311660ac926c6277d60d86132a7bf">&#9670;&nbsp;</a></span>execute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string UnionCommand::execute </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_union_command.html#a74b311660ac926c6277d60d86132a7bf" title="execute() contains command specific execution logic">execute()</a> contains command specific execution logic </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parameters</td><td>vector of string values</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a string containing the execution message</dd></dl>
+
+<p>Implements <a class="el" href="class_i_command.html#a14396725824145bbe47c378cc4b484cd">ICommand</a>.</p>
+
+</div>
+</div>
+<a id="aedb03b4bb4e927f74ab02e014e7ea861"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedb03b4bb4e927f74ab02e014e7ea861">&#9670;&nbsp;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string UnionCommand::toString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_union_command.html#aedb03b4bb4e927f74ab02e014e7ea861" title="toString() implementation on command class">toString()</a> implementation on command class </p>
+<dl class="section return"><dt>Returns</dt><dd>the command name</dd></dl>
+
+<p>Implements <a class="el" href="class_i_command.html#ac042a2d4560ede21e8089173d5c64197">ICommand</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>D:/Git/oop-context-free-grammar/oop-context-free-grammar/context-free-grammar/<a class="el" href="_union_command_8h_source.html">UnionCommand.h</a></li>
 <li>D:/Git/oop-context-free-grammar/oop-context-free-grammar/context-free-grammar/UnionCommand.cpp</li>
