@@ -8,6 +8,9 @@
 #include <iostream>
 #include <sstream>
 
+/// <summary>
+/// ICommandParser implementation
+/// </summary>
 class CommandParser : public ICommandParser
 {
 public:

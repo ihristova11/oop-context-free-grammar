@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['icommand_17',['ICommand',['../class_i_command.html',1,'']]],
-  ['icommandparser_18',['ICommandParser',['../class_i_command_parser.html',1,'']]],
-  ['itercommand_19',['IterCommand',['../class_iter_command.html',1,'']]]
+  ['icommand_18',['ICommand',['../class_i_command.html',1,'']]],
+  ['icommandparser_19',['ICommandParser',['../class_i_command_parser.html',1,'']]],
+  ['isminparameterscount_20',['isMinParametersCount',['../class_validator.html#a77da1aad12a17fbfa5ca1738d6d21faa',1,'Validator']]],
+  ['isvalidinputfile_21',['isValidInputFile',['../class_validator.html#a9b91569a3a61a026f04ef5531af64381',1,'Validator']]],
+  ['isvalidparameterscount_22',['isValidParametersCount',['../class_validator.html#acb93a97c6084a7e0b66a7596bb19e4c7',1,'Validator']]],
+  ['itercommand_23',['IterCommand',['../class_iter_command.html',1,'']]]
 ];

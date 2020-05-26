@@ -78,18 +78,23 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_i_command_parser.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_i_command_parser.html">ICommandParser</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_i_command.html">ICommand</a>* parseCommand(<span class="keyword">const</span> std::string&amp;) = 0;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">virtual</span> std::vector&lt;std::string&gt; parseParameters(<span class="keyword">const</span> std::string&amp;) = 0;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">virtual</span> std::vector&lt;std::string&gt; split(<span class="keyword">const</span> std::string&amp; s, <span class="keywordtype">char</span> delim) = 0;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;};</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#endif // !ICOMMAND_PARSER_H</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_i_command_parser.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_i_command_parser.html">ICommandParser</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_i_command_parser.html#ad84d690361143669ea7bb3516df90fb1">   20</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_i_command.html">ICommand</a>* <a class="code" href="class_i_command_parser.html#ad84d690361143669ea7bb3516df90fb1">parseCommand</a>(<span class="keyword">const</span> std::string&amp;) = 0;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_i_command_parser.html#aa327d853c97ae2099e351d9f36115495">   27</a></span>&#160;    <span class="keyword">virtual</span> std::vector&lt;std::string&gt; <a class="code" href="class_i_command_parser.html#aa327d853c97ae2099e351d9f36115495">parseParameters</a>(<span class="keyword">const</span> std::string&amp;) = 0;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">virtual</span> std::vector&lt;std::string&gt; split(<span class="keyword">const</span> std::string&amp; s, <span class="keywordtype">char</span> delim) = 0;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif // !ICOMMAND_PARSER_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclass_i_command_html"><div class="ttname"><a href="class_i_command.html">ICommand</a></div><div class="ttdoc">ICommand interface to be implemented by different command instances</div><div class="ttdef"><b>Definition:</b> ICommand.h:13</div></div>
-<div class="ttc" id="aclass_i_command_parser_html"><div class="ttname"><a href="class_i_command_parser.html">ICommandParser</a></div><div class="ttdef"><b>Definition:</b> ICommandParser.h:10</div></div>
+<div class="ttc" id="aclass_i_command_parser_html_ad84d690361143669ea7bb3516df90fb1"><div class="ttname"><a href="class_i_command_parser.html#ad84d690361143669ea7bb3516df90fb1">ICommandParser::parseCommand</a></div><div class="ttdeci">virtual ICommand * parseCommand(const std::string &amp;)=0</div><div class="ttdoc">finds a command by parameters given</div></div>
+<div class="ttc" id="aclass_i_command_parser_html"><div class="ttname"><a href="class_i_command_parser.html">ICommandParser</a></div><div class="ttdoc">ICommandParser interface for different implementations of parser objects</div><div class="ttdef"><b>Definition:</b> ICommandParser.h:13</div></div>
+<div class="ttc" id="aclass_i_command_parser_html_aa327d853c97ae2099e351d9f36115495"><div class="ttname"><a href="class_i_command_parser.html#aa327d853c97ae2099e351d9f36115495">ICommandParser::parseParameters</a></div><div class="ttdeci">virtual std::vector&lt; std::string &gt; parseParameters(const std::string &amp;)=0</div><div class="ttdoc">splits the command parameters</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

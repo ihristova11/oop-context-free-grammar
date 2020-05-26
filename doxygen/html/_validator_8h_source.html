@@ -73,13 +73,27 @@ $(function() {
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef VALIDATOR_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define VALIDATOR_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="class_validator.html">    4</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_validator.html">Validator</a></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;};</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#endif // !VALIDATOR_H</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_validator.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_validator.html">Validator</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_validator.html#a9b91569a3a61a026f04ef5531af64381">isValidInputFile</a>(std::string);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_validator.html#acb93a97c6084a7e0b66a7596bb19e4c7">isValidParametersCount</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp;, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp;);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_validator.html#aaa8bb49e20b18938171082932c38d716">hasParameters</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp;);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_validator.html#a77da1aad12a17fbfa5ca1738d6d21faa">isMinParametersCount</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp;, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp;);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif // !VALIDATOR_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_validator_html"><div class="ttname"><a href="class_validator.html">Validator</a></div><div class="ttdef"><b>Definition:</b> Validator.h:5</div></div>
+<div class="ttc" id="aclass_validator_html_a77da1aad12a17fbfa5ca1738d6d21faa"><div class="ttname"><a href="class_validator.html#a77da1aad12a17fbfa5ca1738d6d21faa">Validator::isMinParametersCount</a></div><div class="ttdeci">static bool isMinParametersCount(const int &amp;, const int &amp;)</div><div class="ttdoc">checks if minimum parameters are provided</div><div class="ttdef"><b>Definition:</b> Validator.cpp:18</div></div>
+<div class="ttc" id="aclass_validator_html"><div class="ttname"><a href="class_validator.html">Validator</a></div><div class="ttdoc">Validator is a static class containing different functions for checking parameters validity</div><div class="ttdef"><b>Definition:</b> Validator.h:10</div></div>
+<div class="ttc" id="aclass_validator_html_aaa8bb49e20b18938171082932c38d716"><div class="ttname"><a href="class_validator.html#aaa8bb49e20b18938171082932c38d716">Validator::hasParameters</a></div><div class="ttdeci">static bool hasParameters(const int &amp;)</div><div class="ttdoc">checks if parameters count is &gt; 1</div><div class="ttdef"><b>Definition:</b> Validator.cpp:13</div></div>
+<div class="ttc" id="aclass_validator_html_a9b91569a3a61a026f04ef5531af64381"><div class="ttname"><a href="class_validator.html#a9b91569a3a61a026f04ef5531af64381">Validator::isValidInputFile</a></div><div class="ttdeci">static bool isValidInputFile(std::string)</div><div class="ttdoc">validates input file</div><div class="ttdef"><b>Definition:</b> Validator.cpp:3</div></div>
+<div class="ttc" id="aclass_validator_html_acb93a97c6084a7e0b66a7596bb19e4c7"><div class="ttname"><a href="class_validator.html#acb93a97c6084a7e0b66a7596bb19e4c7">Validator::isValidParametersCount</a></div><div class="ttdeci">static bool isValidParametersCount(const int &amp;, const int &amp;)</div><div class="ttdoc">validates parameters count</div><div class="ttdef"><b>Definition:</b> Validator.cpp:8</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -62,12 +62,202 @@ $(function() {
 
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="class_validator-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Validator Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<hr/>The documentation for this class was generated from the following file:<ul>
+
+<p><a class="el" href="class_validator.html" title="Validator is a static class containing different functions for checking parameters validity">Validator</a> is a static class containing different functions for checking parameters validity  
+ <a href="class_validator.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_validator_8h_source.html">Validator.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a9b91569a3a61a026f04ef5531af64381"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_validator.html#a9b91569a3a61a026f04ef5531af64381">isValidInputFile</a> (std::string)</td></tr>
+<tr class="memdesc:a9b91569a3a61a026f04ef5531af64381"><td class="mdescLeft">&#160;</td><td class="mdescRight">validates input file  <a href="class_validator.html#a9b91569a3a61a026f04ef5531af64381">More...</a><br /></td></tr>
+<tr class="separator:a9b91569a3a61a026f04ef5531af64381"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb93a97c6084a7e0b66a7596bb19e4c7"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_validator.html#acb93a97c6084a7e0b66a7596bb19e4c7">isValidParametersCount</a> (const int &amp;, const int &amp;)</td></tr>
+<tr class="memdesc:acb93a97c6084a7e0b66a7596bb19e4c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">validates parameters count  <a href="class_validator.html#acb93a97c6084a7e0b66a7596bb19e4c7">More...</a><br /></td></tr>
+<tr class="separator:acb93a97c6084a7e0b66a7596bb19e4c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa8bb49e20b18938171082932c38d716"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_validator.html#aaa8bb49e20b18938171082932c38d716">hasParameters</a> (const int &amp;)</td></tr>
+<tr class="memdesc:aaa8bb49e20b18938171082932c38d716"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks if parameters count is &gt; 1  <a href="class_validator.html#aaa8bb49e20b18938171082932c38d716">More...</a><br /></td></tr>
+<tr class="separator:aaa8bb49e20b18938171082932c38d716"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77da1aad12a17fbfa5ca1738d6d21faa"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_validator.html#a77da1aad12a17fbfa5ca1738d6d21faa">isMinParametersCount</a> (const int &amp;, const int &amp;)</td></tr>
+<tr class="memdesc:a77da1aad12a17fbfa5ca1738d6d21faa"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks if minimum parameters are provided  <a href="class_validator.html#a77da1aad12a17fbfa5ca1738d6d21faa">More...</a><br /></td></tr>
+<tr class="separator:a77da1aad12a17fbfa5ca1738d6d21faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="class_validator.html" title="Validator is a static class containing different functions for checking parameters validity">Validator</a> is a static class containing different functions for checking parameters validity </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aaa8bb49e20b18938171082932c38d716"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa8bb49e20b18938171082932c38d716">&#9670;&nbsp;</a></span>hasParameters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Validator::hasParameters </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>checks if parameters count is &gt; 1 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool</dd></dl>
+
+</div>
+</div>
+<a id="a77da1aad12a17fbfa5ca1738d6d21faa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77da1aad12a17fbfa5ca1738d6d21faa">&#9670;&nbsp;</a></span>isMinParametersCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Validator::isMinParametersCount </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>checks if minimum parameters are provided </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">actual</td><td></td></tr>
+    <tr><td class="paramname">min</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool</dd></dl>
+
+</div>
+</div>
+<a id="a9b91569a3a61a026f04ef5531af64381"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b91569a3a61a026f04ef5531af64381">&#9670;&nbsp;</a></span>isValidInputFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Validator::isValidInputFile </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>validates input file </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td>a string representation of file path</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool</dd></dl>
+
+</div>
+</div>
+<a id="acb93a97c6084a7e0b66a7596bb19e4c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb93a97c6084a7e0b66a7596bb19e4c7">&#9670;&nbsp;</a></span>isValidParametersCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Validator::isValidParametersCount </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>validates parameters count </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expected</td><td></td></tr>
+    <tr><td class="paramname">actual</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool</dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>D:/Git/oop-context-free-grammar/oop-context-free-grammar/context-free-grammar/<a class="el" href="_validator_8h_source.html">Validator.h</a></li>
+<li>D:/Git/oop-context-free-grammar/oop-context-free-grammar/context-free-grammar/Validator.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

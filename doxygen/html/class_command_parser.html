@@ -69,13 +69,18 @@ $(function() {
 <div class="title">CommandParser Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><a class="el" href="class_i_command_parser.html" title="ICommandParser interface for different implementations of parser objects">ICommandParser</a> implementation  
+ <a href="class_command_parser.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_command_parser_8h_source.html">CommandParser.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for CommandParser:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_command_parser.png" usemap="#CommandParser_map" alt=""/>
   <map id="CommandParser_map" name="CommandParser_map">
-<area href="class_i_command_parser.html" alt="ICommandParser" shape="rect" coords="0,0,108,24"/>
+<area href="class_i_command_parser.html" title="ICommandParser interface for different implementations of parser objects" alt="ICommandParser" shape="rect" coords="0,0,108,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -84,13 +89,90 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aed39d6c828fb36c0dbf5b9ead61a49b8"><td class="memItemLeft" align="right" valign="top"><a id="aed39d6c828fb36c0dbf5b9ead61a49b8"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>CommandParser</b> (<a class="el" href="class_file_reader.html">FileReader</a> *, <a class="el" href="class_file_writer.html">FileWriter</a> *)</td></tr>
 <tr class="separator:aed39d6c828fb36c0dbf5b9ead61a49b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0c976990c4288c7af9498c77cf8aad0"><td class="memItemLeft" align="right" valign="top"><a id="af0c976990c4288c7af9498c77cf8aad0"></a>
-virtual <a class="el" href="class_i_command.html">ICommand</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>parseCommand</b> (const std::string &amp;) override</td></tr>
+<tr class="memitem:af0c976990c4288c7af9498c77cf8aad0"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_i_command.html">ICommand</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command_parser.html#af0c976990c4288c7af9498c77cf8aad0">parseCommand</a> (const std::string &amp;) override</td></tr>
+<tr class="memdesc:af0c976990c4288c7af9498c77cf8aad0"><td class="mdescLeft">&#160;</td><td class="mdescRight">finds a command by parameters given  <a href="class_command_parser.html#af0c976990c4288c7af9498c77cf8aad0">More...</a><br /></td></tr>
 <tr class="separator:af0c976990c4288c7af9498c77cf8aad0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a420ad8c4f3a5a3ea8278a5cb54e247f9"><td class="memItemLeft" align="right" valign="top"><a id="a420ad8c4f3a5a3ea8278a5cb54e247f9"></a>
-virtual std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>parseParameters</b> (const std::string &amp;) override</td></tr>
+<tr class="memitem:a420ad8c4f3a5a3ea8278a5cb54e247f9"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command_parser.html#a420ad8c4f3a5a3ea8278a5cb54e247f9">parseParameters</a> (const std::string &amp;) override</td></tr>
+<tr class="memdesc:a420ad8c4f3a5a3ea8278a5cb54e247f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">splits the command parameters  <a href="class_command_parser.html#a420ad8c4f3a5a3ea8278a5cb54e247f9">More...</a><br /></td></tr>
 <tr class="separator:a420ad8c4f3a5a3ea8278a5cb54e247f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="class_i_command_parser.html" title="ICommandParser interface for different implementations of parser objects">ICommandParser</a> implementation </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="af0c976990c4288c7af9498c77cf8aad0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0c976990c4288c7af9498c77cf8aad0">&#9670;&nbsp;</a></span>parseCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_command.html">ICommand</a> * CommandParser::parseCommand </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>finds a command by parameters given </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fullCommand</td><td>string variable containing the command name and its parameters</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ICommand* if a command is found, nullptr if not</dd></dl>
+
+<p>Implements <a class="el" href="class_i_command_parser.html#ad84d690361143669ea7bb3516df90fb1">ICommandParser</a>.</p>
+
+</div>
+</div>
+<a id="a420ad8c4f3a5a3ea8278a5cb54e247f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a420ad8c4f3a5a3ea8278a5cb54e247f9">&#9670;&nbsp;</a></span>parseParameters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; CommandParser::parseParameters </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>splits the command parameters </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fullCommand</td><td>string variable containing the command name and its parameters</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::string&gt; of split values</dd></dl>
+
+<p>Implements <a class="el" href="class_i_command_parser.html#aa327d853c97ae2099e351d9f36115495">ICommandParser</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>D:/Git/oop-context-free-grammar/oop-context-free-grammar/context-free-grammar/<a class="el" href="_command_parser_8h_source.html">CommandParser.h</a></li>
 <li>D:/Git/oop-context-free-grammar/oop-context-free-grammar/context-free-grammar/CommandParser.cpp</li>
