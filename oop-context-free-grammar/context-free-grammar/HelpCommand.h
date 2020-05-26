@@ -3,6 +3,9 @@
 
 #include "ICommand.h"
 
+/// <summary>
+/// HelpCommand displays useful message to the user
+/// </summary>
 class HelpCommand : public ICommand
 {
 public:

@@ -2,6 +2,10 @@
 #define PRINT_COMMAND_H
 
 #include "ICommand.h"
+
+/// <summary>
+/// PrintCommand displays a grammar in a proper way
+/// </summary>
 class PrintCommand : public ICommand
 {
 public:

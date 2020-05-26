@@ -3,6 +3,9 @@
 
 #include "ICommand.h"
 
+/// <summary>
+/// OpenCommand is used for opening an existing file or creating a new one if such does not exist
+/// </summary>
 class OpenCommand : public ICommand
 {
 public:

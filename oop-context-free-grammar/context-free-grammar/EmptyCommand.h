@@ -3,6 +3,9 @@
 
 #include "ICommand.h"
 
+/// <summary>
+/// EmptyCommand checks if the language of the grammar is empty
+/// </summary>
 class EmptyCommand : public ICommand
 {
 public:

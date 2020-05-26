@@ -3,6 +3,9 @@
 
 #include "ICommand.h"
 
+/// <summary>
+/// ChomskyCommand checks if grammar is in Chomsky normal form
+/// </summary>
 class ChomskyCommand : public ICommand
 {
 public:

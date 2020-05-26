@@ -3,6 +3,9 @@
 
 #include "ICommand.h"
 
+/// <summary>
+/// ListCommand displays information about grammars
+/// </summary>
 class ListCommand : public ICommand
 {
 public:

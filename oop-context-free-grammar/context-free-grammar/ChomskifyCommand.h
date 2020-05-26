@@ -3,6 +3,9 @@
 
 #include "ICommand.h"
 
+/// <summary>
+/// ChomskifyCommand converts grammar into Chomsky normal form
+/// </summary>
 class ChomskifyCommand : public ICommand
 {
 public:

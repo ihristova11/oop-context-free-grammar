@@ -3,6 +3,9 @@
 
 #include "ICommand.h"
 
+/// <summary>
+/// RemoveRuleCommand remove rules by given parameters
+/// </summary>
 class RemoveRuleCommand : public ICommand
 {
 public:

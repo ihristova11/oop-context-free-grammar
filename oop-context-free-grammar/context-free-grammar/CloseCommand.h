@@ -3,6 +3,9 @@
 
 #include "ICommand.h"
 
+/// <summary>
+/// CloseCommand class hold the logic of closing the last document opened.
+/// </summary>
 class CloseCommand : public ICommand
 {
 public:

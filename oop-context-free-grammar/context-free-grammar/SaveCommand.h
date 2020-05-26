@@ -3,6 +3,9 @@
 
 #include "ICommand.h"
 
+/// <summary>
+/// SaveCommand saves changes in the current file
+/// </summary>
 class SaveCommand : public ICommand
 {
 public:

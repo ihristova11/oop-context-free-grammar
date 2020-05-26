@@ -3,6 +3,9 @@
 
 #include "ICommand.h"
 
+/// <summary>
+/// IterCommand constructs a new grammar using the Kleene star operation
+/// </summary>
 class IterCommand : public ICommand
 {
 public:

@@ -3,6 +3,9 @@
 
 #include "ICommand.h"
 
+/// <summary>
+/// UnionCommand creates a new grammar out of the union of two other grammars
+/// </summary>
 class UnionCommand : public ICommand
 {
 public:

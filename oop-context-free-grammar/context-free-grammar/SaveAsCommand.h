@@ -3,6 +3,9 @@
 
 #include "ICommand.h"
 
+/// <summary>
+/// SaveAsCommand saves changes in a different file (should be .txt as well)
+/// </summary>
 class SaveAsCommand : public ICommand
 {
 public:

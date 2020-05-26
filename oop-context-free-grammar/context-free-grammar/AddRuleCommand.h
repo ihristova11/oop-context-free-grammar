@@ -3,6 +3,9 @@
 
 #include "ICommand.h"
 
+/// <summary>
+/// AddRuleCommand adds rules to grammar
+/// </summary>
 class AddRuleCommand : public ICommand
 {
 public:

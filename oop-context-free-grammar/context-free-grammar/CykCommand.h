@@ -3,6 +3,9 @@
 
 #include "ICommand.h"
 
+/// <summary>
+/// CykCommand checks if a word is element of the language of the grammar
+/// </summary>
 class CykCommand : public ICommand
 {
 public:

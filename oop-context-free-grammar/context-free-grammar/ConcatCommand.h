@@ -3,6 +3,9 @@
 
 #include "ICommand.h"
 
+/// <summary>
+/// ConcatCommand concatenates two grammars by ids
+/// </summary>
 class ConcatCommand : public ICommand
 {
 public:
