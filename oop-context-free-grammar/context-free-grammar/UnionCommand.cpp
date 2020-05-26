@@ -7,5 +7,5 @@ std::string UnionCommand::execute(const std::vector<std::string>&)
 
 std::string UnionCommand::toString()
 {
-	return std::string();
+	return Constants::UnionCommandName;
 }

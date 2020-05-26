@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 
+#include "Constants.h"
+
 class ICommand
 {
 public:

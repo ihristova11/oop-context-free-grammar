@@ -7,5 +7,5 @@ std::string AddRuleCommand::execute(const std::vector<std::string>&)
 
 std::string AddRuleCommand::toString()
 {
-	return std::string();
+	return Constants::AddRuleCommandName;
 }

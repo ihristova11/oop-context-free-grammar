@@ -2,6 +2,9 @@
 #define CONSTANTS_H
 #include <string>
 
+/// <summary>
+/// Stores constant std::strings
+/// </summary>
 namespace Constants
 {
 	const std::string OpenCommandName = "open";

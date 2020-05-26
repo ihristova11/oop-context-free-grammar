@@ -7,5 +7,5 @@ std::string EmptyCommand::execute(const std::vector<std::string>&)
 
 std::string EmptyCommand::toString()
 {
-	return std::string();
+	return Constants::EmptyCommandName;
 }

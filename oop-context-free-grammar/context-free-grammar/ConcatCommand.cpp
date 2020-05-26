@@ -7,5 +7,5 @@ std::string ConcatCommand::execute(const std::vector<std::string>&)
 
 std::string ConcatCommand::toString()
 {
-	return std::string();
+	return Constants::ConcatCommandName;
 }

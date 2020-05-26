@@ -7,5 +7,5 @@ std::string ChomskyCommand::execute(const std::vector<std::string>&)
 
 std::string ChomskyCommand::toString()
 {
-	return std::string();
+	return Constants::ChomskyCommandName;
 }

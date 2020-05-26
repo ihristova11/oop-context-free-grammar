@@ -7,5 +7,5 @@ std::string CloseCommand::execute(const std::vector<std::string>&)
 
 std::string CloseCommand::toString()
 {
-	return std::string();
+	return Constants::CloseCommandName;
 }

@@ -7,5 +7,5 @@ std::string PrintCommand::execute(const std::vector<std::string>&)
 
 std::string PrintCommand::toString()
 {
-	return std::string();
+	return Constants::PrintCommandName;
 }

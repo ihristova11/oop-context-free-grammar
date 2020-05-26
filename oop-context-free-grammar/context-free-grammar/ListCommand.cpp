@@ -7,5 +7,5 @@ std::string ListCommand::execute(const std::vector<std::string>&)
 
 std::string ListCommand::toString()
 {
-	return std::string();
+	return Constants::ListCommandName;
 }

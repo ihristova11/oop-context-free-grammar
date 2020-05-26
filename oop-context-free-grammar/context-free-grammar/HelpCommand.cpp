@@ -7,5 +7,5 @@ std::string HelpCommand::execute(const std::vector<std::string>&)
 
 std::string HelpCommand::toString()
 {
-	return std::string();
+	return Constants::HelpCommandName;
 }

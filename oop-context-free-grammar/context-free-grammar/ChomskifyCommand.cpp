@@ -7,5 +7,5 @@ std::string ChomskifyCommand::execute(const std::vector<std::string>&)
 
 std::string ChomskifyCommand::toString()
 {
-	return std::string();
+	return Constants::ChomskifyCommandName;
 }

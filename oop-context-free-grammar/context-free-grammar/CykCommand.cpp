@@ -7,5 +7,5 @@ std::string CykCommand::execute(const std::vector<std::string>&)
 
 std::string CykCommand::toString()
 {
-	return std::string();
+	return Constants::CykCommandName;
 }

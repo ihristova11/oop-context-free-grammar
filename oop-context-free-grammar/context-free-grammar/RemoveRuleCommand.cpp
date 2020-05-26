@@ -7,5 +7,5 @@ std::string RemoveRuleCommand::execute(const std::vector<std::string>&)
 
 std::string RemoveRuleCommand::toString()
 {
-	return std::string();
+	return Constants::RemoveRuleCommandName;
 }

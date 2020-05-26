@@ -7,5 +7,5 @@ std::string SaveAsCommand::execute(const std::vector<std::string>&)
 
 std::string SaveAsCommand::toString()
 {
-	return std::string();
+	return Constants::SaveAsCommandName;
 }
