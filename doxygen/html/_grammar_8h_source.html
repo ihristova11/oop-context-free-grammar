@@ -88,22 +88,28 @@ $(function() {
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    std::string <a class="code" href="class_grammar.html#a63ba6c2b30ba2667ee85fed940712df8">getId</a>();</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_grammar.html#a026c29176bf759667beccaa40b26fad2">addRule</a>(<span class="keyword">const</span> std::string&amp;);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    std::vector&lt;Rule*&gt; <a class="code" href="class_grammar.html#a005275a5e7a6091a7853a57bad6128f9">getRules</a>();</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    std::string <a class="code" href="class_grammar.html#af608dfd9ab58b6b90ac35b2543b7aaff">toString</a>();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    std::string id;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    std::vector&lt;std::string&gt; terminals; <span class="comment">// E</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    std::vector&lt;std::string&gt; variables; <span class="comment">// chars? // V</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    std::string startVariable; <span class="comment">// S</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    std::vector&lt;Rule*&gt; rules; <span class="comment">// R</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif // !GRAMMAR_H</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_grammar.html#a026c29176bf759667beccaa40b26fad2">addRule</a>(<span class="keyword">const</span> std::string&amp;);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_grammar.html#ada8830dae975916e5d1b157c88bd7a0c">removeRule</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp;);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    std::string <a class="code" href="class_grammar.html#af608dfd9ab58b6b90ac35b2543b7aaff">toString</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    std::string id;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    std::vector&lt;std::string&gt; terminals; <span class="comment">// E</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    std::vector&lt;std::string&gt; variables; <span class="comment">// chars? // V</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    std::string startVariable; <span class="comment">// S</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    std::vector&lt;Rule*&gt; rules; <span class="comment">// R</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif // !GRAMMAR_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_grammar_html_ada8830dae975916e5d1b157c88bd7a0c"><div class="ttname"><a href="class_grammar.html#ada8830dae975916e5d1b157c88bd7a0c">Grammar::removeRule</a></div><div class="ttdeci">void removeRule(const int &amp;)</div><div class="ttdoc">removes Rule*</div><div class="ttdef"><b>Definition:</b> Grammar.cpp:42</div></div>
 <div class="ttc" id="aclass_grammar_html_a63ba6c2b30ba2667ee85fed940712df8"><div class="ttname"><a href="class_grammar.html#a63ba6c2b30ba2667ee85fed940712df8">Grammar::getId</a></div><div class="ttdeci">std::string getId()</div><div class="ttdoc">getter</div><div class="ttdef"><b>Definition:</b> Grammar.cpp:18</div></div>
-<div class="ttc" id="aclass_grammar_html_af608dfd9ab58b6b90ac35b2543b7aaff"><div class="ttname"><a href="class_grammar.html#af608dfd9ab58b6b90ac35b2543b7aaff">Grammar::toString</a></div><div class="ttdeci">std::string toString()</div><div class="ttdoc">toString() implementation</div><div class="ttdef"><b>Definition:</b> Grammar.cpp:37</div></div>
-<div class="ttc" id="aclass_grammar_html_a026c29176bf759667beccaa40b26fad2"><div class="ttname"><a href="class_grammar.html#a026c29176bf759667beccaa40b26fad2">Grammar::addRule</a></div><div class="ttdeci">void addRule(const std::string &amp;)</div><div class="ttdoc">adds Rule* to the vector</div><div class="ttdef"><b>Definition:</b> Grammar.cpp:23</div></div>
+<div class="ttc" id="aclass_grammar_html_af608dfd9ab58b6b90ac35b2543b7aaff"><div class="ttname"><a href="class_grammar.html#af608dfd9ab58b6b90ac35b2543b7aaff">Grammar::toString</a></div><div class="ttdeci">std::string toString()</div><div class="ttdoc">toString() implementation</div><div class="ttdef"><b>Definition:</b> Grammar.cpp:47</div></div>
+<div class="ttc" id="aclass_grammar_html_a005275a5e7a6091a7853a57bad6128f9"><div class="ttname"><a href="class_grammar.html#a005275a5e7a6091a7853a57bad6128f9">Grammar::getRules</a></div><div class="ttdeci">std::vector&lt; Rule * &gt; getRules()</div><div class="ttdoc">getter</div><div class="ttdef"><b>Definition:</b> Grammar.cpp:23</div></div>
+<div class="ttc" id="aclass_grammar_html_a026c29176bf759667beccaa40b26fad2"><div class="ttname"><a href="class_grammar.html#a026c29176bf759667beccaa40b26fad2">Grammar::addRule</a></div><div class="ttdeci">void addRule(const std::string &amp;)</div><div class="ttdoc">adds Rule* to the vector</div><div class="ttdef"><b>Definition:</b> Grammar.cpp:28</div></div>
 <div class="ttc" id="aclass_grammar_html"><div class="ttname"><a href="class_grammar.html">Grammar</a></div><div class="ttdoc">Grammar model representing a context-free grammar implementation</div><div class="ttdef"><b>Definition:</b> Grammar.h:13</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

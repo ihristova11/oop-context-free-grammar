@@ -83,9 +83,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a63ba6c2b30ba2667ee85fed940712df8"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grammar.html#a63ba6c2b30ba2667ee85fed940712df8">getId</a> ()</td></tr>
 <tr class="memdesc:a63ba6c2b30ba2667ee85fed940712df8"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter  <a href="class_grammar.html#a63ba6c2b30ba2667ee85fed940712df8">More...</a><br /></td></tr>
 <tr class="separator:a63ba6c2b30ba2667ee85fed940712df8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a005275a5e7a6091a7853a57bad6128f9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_rule.html">Rule</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grammar.html#a005275a5e7a6091a7853a57bad6128f9">getRules</a> ()</td></tr>
+<tr class="memdesc:a005275a5e7a6091a7853a57bad6128f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter  <a href="class_grammar.html#a005275a5e7a6091a7853a57bad6128f9">More...</a><br /></td></tr>
+<tr class="separator:a005275a5e7a6091a7853a57bad6128f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a026c29176bf759667beccaa40b26fad2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grammar.html#a026c29176bf759667beccaa40b26fad2">addRule</a> (const std::string &amp;)</td></tr>
 <tr class="memdesc:a026c29176bf759667beccaa40b26fad2"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds Rule* to the vector  <a href="class_grammar.html#a026c29176bf759667beccaa40b26fad2">More...</a><br /></td></tr>
 <tr class="separator:a026c29176bf759667beccaa40b26fad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada8830dae975916e5d1b157c88bd7a0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grammar.html#ada8830dae975916e5d1b157c88bd7a0c">removeRule</a> (const int &amp;)</td></tr>
+<tr class="memdesc:ada8830dae975916e5d1b157c88bd7a0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">removes Rule*  <a href="class_grammar.html#ada8830dae975916e5d1b157c88bd7a0c">More...</a><br /></td></tr>
+<tr class="separator:ada8830dae975916e5d1b157c88bd7a0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af608dfd9ab58b6b90ac35b2543b7aaff"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grammar.html#af608dfd9ab58b6b90ac35b2543b7aaff">toString</a> ()</td></tr>
 <tr class="memdesc:af608dfd9ab58b6b90ac35b2543b7aaff"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_grammar.html#af608dfd9ab58b6b90ac35b2543b7aaff" title="toString() implementation">toString()</a> implementation  <a href="class_grammar.html#af608dfd9ab58b6b90ac35b2543b7aaff">More...</a><br /></td></tr>
 <tr class="separator:af608dfd9ab58b6b90ac35b2543b7aaff"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,6 +142,52 @@ Public Member Functions</h2></td></tr>
 
 <p>getter </p>
 <dl class="section return"><dt>Returns</dt><dd>id</dd></dl>
+
+</div>
+</div>
+<a id="a005275a5e7a6091a7853a57bad6128f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a005275a5e7a6091a7853a57bad6128f9">&#9670;&nbsp;</a></span>getRules()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_rule.html">Rule</a> * &gt; Grammar::getRules </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>getter </p>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;Rule*&gt;</dd></dl>
+
+</div>
+</div>
+<a id="ada8830dae975916e5d1b157c88bd7a0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada8830dae975916e5d1b157c88bd7a0c">&#9670;&nbsp;</a></span>removeRule()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Grammar::removeRule </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>removes Rule* </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>int index</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
