@@ -4,6 +4,9 @@
 #include <vector>
 #include "Grammar.h"
 
+/// <summary>
+/// Store class combining different grammar info as a single unit
+/// </summary>
 class Store
 {
 public:
@@ -15,7 +18,11 @@ public:
 	/// <param name="id"></param>
 	/// <returns>Grammar* or nullptr if not found</returns>
 	Grammar* findGrammarById(const std::string&);
-
+	
+	/// <summary>
+	/// getter
+	/// </summary>
+	/// <returns>std::vector<Grammar*></returns>
 	std::vector<Grammar*> getGrammars();
 private:
 	std::vector<Grammar*> grammars;

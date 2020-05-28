@@ -4,10 +4,18 @@
 #include <string>
 #include <vector>
 
+/// <summary>
+/// Rule model containing nonTerminal and product values
+/// </summary>
 class Rule
 {
 public:
 	Rule(const std::string&, const std::vector<std::string>&);
+
+	/// <summary>
+	/// toString() implementation
+	/// </summary>
+	/// <returns>std::string</returns>
 	std::string toString();
 private:
 	std::string nonTerminal; // S ->

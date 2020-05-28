@@ -6,6 +6,9 @@
 
 #include "Rule.h"
 
+/// <summary>
+/// Grammar model representing a context-free grammar implementation
+/// </summary>
 class Grammar
 {
 public:
@@ -14,10 +17,22 @@ public:
 		const std::string& s, const std::vector<Rule> r);
 	~Grammar();
 
+	/// <summary>
+	/// getter
+	/// </summary>
+	/// <returns>id</returns>
 	std::string getId();
 
+	/// <summary>
+	/// adds Rule* to the vector
+	/// </summary>
+	/// <param name="r">std::string param</param>
 	void addRule(const std::string&);
 
+	/// <summary>
+	/// toString() implementation
+	/// </summary>
+	/// <returns>std::string</returns>
 	std::string toString();
 private:
 	std::string id;
