@@ -89,6 +89,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a77da1aad12a17fbfa5ca1738d6d21faa"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_validator.html#a77da1aad12a17fbfa5ca1738d6d21faa">isMinParametersCount</a> (const int &amp;, const int &amp;)</td></tr>
 <tr class="memdesc:a77da1aad12a17fbfa5ca1738d6d21faa"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks if minimum parameters are provided  <a href="class_validator.html#a77da1aad12a17fbfa5ca1738d6d21faa">More...</a><br /></td></tr>
 <tr class="separator:a77da1aad12a17fbfa5ca1738d6d21faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8c2d4a8de692f8f6acdde29f0760c97"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_validator.html#af8c2d4a8de692f8f6acdde29f0760c97">isValidGrammarId</a> (const std::string &amp;, const std::vector&lt; <a class="el" href="class_grammar.html">Grammar</a> * &gt; &amp;)</td></tr>
+<tr class="memdesc:af8c2d4a8de692f8f6acdde29f0760c97"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks if there is grammar with this id in the collection  <a href="class_validator.html#af8c2d4a8de692f8f6acdde29f0760c97">More...</a><br /></td></tr>
+<tr class="separator:af8c2d4a8de692f8f6acdde29f0760c97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_validator.html" title="Validator is a static class containing different functions for checking parameters validity">Validator</a> is a static class containing different functions for checking parameters validity </p>
@@ -167,6 +170,52 @@ Static Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">actual</td><td></td></tr>
     <tr><td class="paramname">min</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool</dd></dl>
+
+</div>
+</div>
+<a id="af8c2d4a8de692f8f6acdde29f0760c97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8c2d4a8de692f8f6acdde29f0760c97">&#9670;&nbsp;</a></span>isValidGrammarId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Validator::isValidGrammarId </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="class_grammar.html">Grammar</a> * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>grammars</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>checks if there is grammar with this id in the collection </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td></td></tr>
+    <tr><td class="paramname">grammars</td><td></td></tr>
   </table>
   </dd>
 </dl>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getinstance_66',['getInstance',['../class_engine.html#a4fbdd2df29e30dd08de3c285cee8c128',1,'Engine']]]
+  ['findgrammarbyid_72',['findGrammarById',['../class_store.html#a85b0f8d5a6ec9572be4c53b1e64a7104',1,'Store']]]
 ];
