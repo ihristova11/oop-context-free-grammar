@@ -9,6 +9,8 @@
 class RemoveRuleCommand : public ICommand
 {
 public:
+	RemoveRuleCommand(Store*);
+public:
 	virtual std::string execute(const std::vector<std::string>&) override;
 	virtual std::string toString() override;
 };

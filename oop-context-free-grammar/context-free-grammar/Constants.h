@@ -7,6 +7,7 @@
 /// </summary>
 namespace Constants
 {
+	// file commands
 	const std::string OpenCommandName = "open";
 	const std::string CloseCommandName = "close";
 	const std::string SaveCommandName = "save";
@@ -14,6 +15,7 @@ namespace Constants
 	const std::string HelpCommandName = "help";
 	const std::string ExitCommandName = "exit";
 
+	// commands
 	const std::string AddRuleCommandName = "addRule";
 	const std::string ChomskifyCommandName = "chomskify";
 	const std::string ChomskyCommandName = "chomsky";
@@ -26,11 +28,14 @@ namespace Constants
 	const std::string RemoveRuleCommandName = "removeRule";
 	const std::string UnionCommandName = "union";
 
-
+	// error messages
 	const std::string OpenCommandOnly = "You should open a file before entering other commands.";
 	const std::string InvalidCommand = "Enter a valid command.";
 	const std::string EnterCommand = "Enter a command: ";
 	const std::string Success = "Command completed successfully!";
+	const std::string InvalidParameters = "Please enter valid parameters!";
+	const std::string NoGrammar = "No such grammar exists!";
+	const std::string NoRule = "Invalid rule index!";
 }
 
 #endif // !CONSTANTS_H

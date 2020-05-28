@@ -20,6 +20,11 @@ std::string Grammar::getId()
 	return this->id;
 }
 
+std::vector<Rule*> Grammar::getRules()
+{
+	return this->rules;
+}
+
 void Grammar::addRule(const std::string& r)
 {
 	// split the string and create a rule by given parameters
@@ -32,6 +37,11 @@ void Grammar::addRule(const std::string& r)
 	Rule* rule = new Rule(nonTerminal, product);
 
 	this->rules.push_back(rule);
+}
+
+void Grammar::removeRule(const int& n)
+{
+	this->rules.erase(this->rules.begin() + n);
 }
 
 std::string Grammar::toString()

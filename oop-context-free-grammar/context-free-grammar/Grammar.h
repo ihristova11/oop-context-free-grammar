@@ -24,10 +24,22 @@ public:
 	std::string getId();
 
 	/// <summary>
+	/// getter
+	/// </summary>
+	/// <returns>std::vector<Rule*></returns>
+	std::vector<Rule*> getRules();
+
+	/// <summary>
 	/// adds Rule* to the vector
 	/// </summary>
 	/// <param name="r">std::string param</param>
 	void addRule(const std::string&);
+
+	/// <summary>
+	/// removes Rule*
+	/// </summary>
+	/// <param name="n">int index</param>
+	void removeRule(const int&);
 
 	/// <summary>
 	/// toString() implementation
