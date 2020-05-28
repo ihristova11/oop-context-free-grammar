@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['helpcommand_56',['HelpCommand',['../class_help_command.html',1,'']]]
+  ['helpcommand_59',['HelpCommand',['../class_help_command.html',1,'']]]
 ];

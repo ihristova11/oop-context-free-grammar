@@ -76,22 +76,23 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;Grammar.h&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_store.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_store.html">Store</a></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="class_store.html">Store</a>(<span class="keyword">const</span> std::vector&lt;Grammar*&gt;&amp;);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="class_grammar.html">Grammar</a>* <a class="code" href="class_store.html#a85b0f8d5a6ec9572be4c53b1e64a7104">findGrammarById</a>(<span class="keyword">const</span> std::string&amp;);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::vector&lt;Grammar*&gt; getGrammars();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    std::vector&lt;Grammar*&gt; grammars;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif // !STORE_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_store.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_store.html">Store</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="class_store.html">Store</a>(<span class="keyword">const</span> std::vector&lt;Grammar*&gt;&amp;);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_grammar.html">Grammar</a>* <a class="code" href="class_store.html#a85b0f8d5a6ec9572be4c53b1e64a7104">findGrammarById</a>(<span class="keyword">const</span> std::string&amp;);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    std::vector&lt;Grammar*&gt; <a class="code" href="class_store.html#aa4a728a28feb3592bfb17301ff14c007">getGrammars</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    std::vector&lt;Grammar*&gt; grammars;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif // !STORE_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_store_html"><div class="ttname"><a href="class_store.html">Store</a></div><div class="ttdef"><b>Definition:</b> Store.h:8</div></div>
-<div class="ttc" id="aclass_grammar_html"><div class="ttname"><a href="class_grammar.html">Grammar</a></div><div class="ttdef"><b>Definition:</b> Grammar.h:10</div></div>
+<div class="ttc" id="aclass_store_html"><div class="ttname"><a href="class_store.html">Store</a></div><div class="ttdoc">Store class combining different grammar info as a single unit</div><div class="ttdef"><b>Definition:</b> Store.h:11</div></div>
+<div class="ttc" id="aclass_grammar_html"><div class="ttname"><a href="class_grammar.html">Grammar</a></div><div class="ttdoc">Grammar model representing a context-free grammar implementation</div><div class="ttdef"><b>Definition:</b> Grammar.h:13</div></div>
+<div class="ttc" id="aclass_store_html_aa4a728a28feb3592bfb17301ff14c007"><div class="ttname"><a href="class_store.html#aa4a728a28feb3592bfb17301ff14c007">Store::getGrammars</a></div><div class="ttdeci">std::vector&lt; Grammar * &gt; getGrammars()</div><div class="ttdoc">getter</div><div class="ttdef"><b>Definition:</b> Store.cpp:16</div></div>
 <div class="ttc" id="aclass_store_html_a85b0f8d5a6ec9572be4c53b1e64a7104"><div class="ttname"><a href="class_store.html#a85b0f8d5a6ec9572be4c53b1e64a7104">Store::findGrammarById</a></div><div class="ttdeci">Grammar * findGrammarById(const std::string &amp;)</div><div class="ttdoc">finds a Grammar by id</div><div class="ttdef"><b>Definition:</b> Store.cpp:6</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

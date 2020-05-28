@@ -69,19 +69,96 @@ $(function() {
 <div class="title">Grammar Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><a class="el" href="class_grammar.html" title="Grammar model representing a context-free grammar implementation">Grammar</a> model representing a context-free grammar implementation  
+ <a href="class_grammar.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_grammar_8h_source.html">Grammar.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8fc9ba95e3c752053a937292091e9a70"><td class="memItemLeft" align="right" valign="top"><a id="a8fc9ba95e3c752053a937292091e9a70"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Grammar</b> (const std::vector&lt; std::string &gt; &amp;e, const std::vector&lt; std::string &gt; &amp;v, const std::string &amp;s, const std::vector&lt; <a class="el" href="class_rule.html">Rule</a> &gt; r)</td></tr>
 <tr class="separator:a8fc9ba95e3c752053a937292091e9a70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63ba6c2b30ba2667ee85fed940712df8"><td class="memItemLeft" align="right" valign="top"><a id="a63ba6c2b30ba2667ee85fed940712df8"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getId</b> ()</td></tr>
+<tr class="memitem:a63ba6c2b30ba2667ee85fed940712df8"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grammar.html#a63ba6c2b30ba2667ee85fed940712df8">getId</a> ()</td></tr>
+<tr class="memdesc:a63ba6c2b30ba2667ee85fed940712df8"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter  <a href="class_grammar.html#a63ba6c2b30ba2667ee85fed940712df8">More...</a><br /></td></tr>
 <tr class="separator:a63ba6c2b30ba2667ee85fed940712df8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af608dfd9ab58b6b90ac35b2543b7aaff"><td class="memItemLeft" align="right" valign="top"><a id="af608dfd9ab58b6b90ac35b2543b7aaff"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>toString</b> ()</td></tr>
+<tr class="memitem:a026c29176bf759667beccaa40b26fad2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grammar.html#a026c29176bf759667beccaa40b26fad2">addRule</a> (const std::string &amp;)</td></tr>
+<tr class="memdesc:a026c29176bf759667beccaa40b26fad2"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds Rule* to the vector  <a href="class_grammar.html#a026c29176bf759667beccaa40b26fad2">More...</a><br /></td></tr>
+<tr class="separator:a026c29176bf759667beccaa40b26fad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af608dfd9ab58b6b90ac35b2543b7aaff"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grammar.html#af608dfd9ab58b6b90ac35b2543b7aaff">toString</a> ()</td></tr>
+<tr class="memdesc:af608dfd9ab58b6b90ac35b2543b7aaff"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_grammar.html#af608dfd9ab58b6b90ac35b2543b7aaff" title="toString() implementation">toString()</a> implementation  <a href="class_grammar.html#af608dfd9ab58b6b90ac35b2543b7aaff">More...</a><br /></td></tr>
 <tr class="separator:af608dfd9ab58b6b90ac35b2543b7aaff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="class_grammar.html" title="Grammar model representing a context-free grammar implementation">Grammar</a> model representing a context-free grammar implementation </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a026c29176bf759667beccaa40b26fad2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a026c29176bf759667beccaa40b26fad2">&#9670;&nbsp;</a></span>addRule()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Grammar::addRule </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>adds Rule* to the vector </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>std::string param</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a63ba6c2b30ba2667ee85fed940712df8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63ba6c2b30ba2667ee85fed940712df8">&#9670;&nbsp;</a></span>getId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Grammar::getId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>getter </p>
+<dl class="section return"><dt>Returns</dt><dd>id</dd></dl>
+
+</div>
+</div>
+<a id="af608dfd9ab58b6b90ac35b2543b7aaff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af608dfd9ab58b6b90ac35b2543b7aaff">&#9670;&nbsp;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Grammar::toString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_grammar.html#af608dfd9ab58b6b90ac35b2543b7aaff" title="toString() implementation">toString()</a> implementation </p>
+<dl class="section return"><dt>Returns</dt><dd>std::string</dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>D:/Git/oop-context-free-grammar/oop-context-free-grammar/context-free-grammar/<a class="el" href="_grammar_8h_source.html">Grammar.h</a></li>
 <li>D:/Git/oop-context-free-grammar/oop-context-free-grammar/context-free-grammar/Grammar.cpp</li>
