@@ -18,5 +18,25 @@ std::string Grammar::getId()
 std::string Grammar::toString()
 {
 	// todo: implement -> should serialize the grammar
+	std::string res = this->id + "\n" + startVariable + "\n";
+	res += this->terminals.size() + "\n";
+	for (std::string t : this->terminals)
+	{
+		res += t + " ";
+	}
+	res += "\n";
+	res += this->variables.size() + "\n";
+	for (std::string v : this->variables)
+	{
+		res += v + " ";
+	}
+	res += "\n";
+	res += this->rules.size() + "\n";
+	for (int i = 0; i < this->rules.size(); i++)
+	{
+		res += i + " ";
+		res += this->rules[i]->toString() + "\n";
+	}
+
 	return std::string();
 }

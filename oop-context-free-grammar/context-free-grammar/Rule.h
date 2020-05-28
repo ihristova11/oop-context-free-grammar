@@ -6,6 +6,8 @@
 
 class Rule
 {
+public:
+	std::string toString();
 private:
 	std::string nonTerminal; // S ->
 	std::vector<std::string> product; // aA

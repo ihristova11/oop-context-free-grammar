@@ -20,7 +20,7 @@ private:
 	std::vector<std::string> terminals; // E
 	std::vector<std::string> variables; // chars? // V
 	std::string startVariable; // S
-	std::vector<Rule> rules; // R
+	std::vector<Rule*> rules; // R
 };
 
 #endif // !GRAMMAR_H
