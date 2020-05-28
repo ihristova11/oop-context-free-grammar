@@ -7,6 +7,7 @@
 class Rule
 {
 public:
+	Rule(const std::string&, const std::vector<std::string>&);
 	std::string toString();
 private:
 	std::string nonTerminal; // S ->

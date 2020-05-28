@@ -1,23 +1,30 @@
 #include "Validator.h"
 
-bool Validator::isValidInputFile(std::string)
+bool Validator::isValidInputFile(std::string file)
 {
-	return true;
+	int size = file.size();
+	std::string res = "";
+	for (size_t i = 1; i <= 4; i++)
+	{
+		res += file[size - i];
+	}
+
+	return res == "txt.";
 }
 
-bool Validator::isValidParametersCount(const int&, const int&)
+bool Validator::isValidParametersCount(const int& expected, const int& actual)
 {
-	return true;
+	return expected == actual;
 }
 
-bool Validator::hasParameters(const int&)
+bool Validator::hasParameters(const int& size)
 {
-	return true;
+	return size > 1;
 }
 
-bool Validator::isMinParametersCount(const int&, const int&)
+bool Validator::isMinParametersCount(const int& actual, const int& min)
 {
-	return true;
+	return min <= actual;
 }
 
 bool Validator::isValidGrammarId(const std::string& id, const std::vector<Grammar*>& grammars)

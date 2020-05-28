@@ -10,9 +10,28 @@ Grammar::Grammar(const std::vector<std::string>& e, const std::vector<std::strin
 	// implement
 }
 
+Grammar::~Grammar()
+{
+	this->rules.clear();
+}
+
 std::string Grammar::getId()
 {
 	return this->id;
+}
+
+void Grammar::addRule(const std::string& r)
+{
+	// split the string and create a rule by given parameters
+	// destroy it in destructor
+
+	//todo: implement this!!!
+	std::string nonTerminal = "";
+	std::vector<std::string> product;
+
+	Rule* rule = new Rule(nonTerminal, product);
+
+	this->rules.push_back(rule);
 }
 
 std::string Grammar::toString()
