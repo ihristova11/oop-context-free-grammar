@@ -26,6 +26,8 @@ Engine::~Engine()
 
 void Engine::start()
 {
+	seed(); // for testing purposes only
+
 	while (true)
 	{
 		std::string commandString;
@@ -66,4 +68,17 @@ void Engine::processCommand(std::string commandAsString)
 	{
 		std::cout << Constants::InvalidCommand << std::endl;
 	}
+}
+
+void Engine::seed()
+{
+	std::vector<Grammar*> grammars =
+	{
+		new Grammar(std::vector<std::string>{"a", "b"}, std::vector<std::string>(),
+		"S", std::vector<Rule*>{new Rule("S", std::vector<std::string>{"aSb|SS|e"})})
+	};
+	this->store = new Store(grammars);
+
+	this->writer->write("D:/Git/oop-context-free-grammar/oop-context-free-grammar/context-free-grammar/grammars.txt", this->store);
+	
 }

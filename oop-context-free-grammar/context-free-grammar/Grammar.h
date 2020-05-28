@@ -14,8 +14,13 @@ class Grammar
 public:
 	Grammar(); // generate with unique id
 	Grammar(const std::vector<std::string>& e, const std::vector<std::string>& v,
-		const std::string& s, const std::vector<Rule> r);
+		const std::string& s, const std::vector<Rule*>& r);
 	~Grammar();
+
+	///// <summary>
+	///// used for grammar id generation
+	///// </summary>
+	//static int grammarId;
 
 	/// <summary>
 	/// getter
@@ -47,7 +52,7 @@ public:
 	/// <returns>std::string</returns>
 	std::string toString();
 private:
-	std::string id;
+	std::string id; // int ?
 	std::vector<std::string> terminals; // E
 	std::vector<std::string> variables; // chars? // V
 	std::string startVariable; // S

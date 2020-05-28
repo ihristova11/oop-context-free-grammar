@@ -44,6 +44,9 @@ private:
 	/// </summary>
 	/// <param name="commandAsString">containing the command name with its parameters</param>
 	void processCommand(std::string);
+
+
+	void seed(); // remove | testing only
 };
 
 #endif // !ENGINE_H

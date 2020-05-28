@@ -1,13 +1,24 @@
 #include "Grammar.h"
+#include "Engine.h"
 
 Grammar::Grammar()
 {
 	// implement
+	static int grammarId = 0;
+	this->id = ++grammarId;
 }
 
-Grammar::Grammar(const std::vector<std::string>& e, const std::vector<std::string>& v, const std::string& s, const std::vector<Rule> r)
+Grammar::Grammar(const std::vector<std::string>& e, const std::vector<std::string>& v,
+	const std::string& s, const std::vector<Rule*>& r)
 {
-	// implement
+	// generate id for the grammar (may use static variable)
+	static int grammarId = 0;
+	this->id = ++grammarId;
+
+	this->variables = v;
+	this->terminals = e;
+	this->startVariable = s;
+	this->rules = r;
 }
 
 Grammar::~Grammar()
@@ -47,25 +58,26 @@ void Grammar::removeRule(const int& n)
 std::string Grammar::toString()
 {
 	// todo: implement -> should serialize the grammar
-	std::string res = this->id + "\n" + startVariable + "\n";
-	res += this->terminals.size() + "\n";
+	std::string res = this->id + "\n";
+	res.append(startVariable + "\n");
+	res.append(std::to_string(this->terminals.size()) + "\n");
 	for (std::string t : this->terminals)
 	{
-		res += t + " ";
+		res.append(t + " ");
 	}
-	res += "\n";
-	res += this->variables.size() + "\n";
+	res.append("\n");
+	res.append(std::to_string(this->variables.size()) + "\n");
 	for (std::string v : this->variables)
 	{
-		res += v + " ";
+		res.append(v + " ");
 	}
-	res += "\n";
-	res += this->rules.size() + "\n";
-	for (int i = 0; i < this->rules.size(); i++)
+	res.append("\n");
+	res.append(std::to_string(this->rules.size()) + "\n");
+	for (size_t i = 0; i < this->rules.size(); i++)
 	{
-		res += i + " ";
-		res += this->rules[i]->toString() + "\n";
+		res.append(std::to_string(i) + "\n");
+		res.append(this->rules[i]->toString() + "\n");
 	}
 
-	return std::string();
+	return res;
 }

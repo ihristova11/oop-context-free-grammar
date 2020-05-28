@@ -6,10 +6,10 @@ Rule::Rule(const std::string& nonTerminal, const std::vector<std::string>& produ
 
 std::string Rule::toString()
 {
-	std::string res = nonTerminal + " -> ";
+	std::string res = nonTerminal + "->";
 	for (std::string s : product)
 	{
-		res += s + " ";
+		res.append(s + " ");
 	}
 	return res;
 }

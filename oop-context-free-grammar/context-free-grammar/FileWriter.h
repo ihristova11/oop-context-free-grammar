@@ -3,8 +3,10 @@
 
 #include <vector>
 #include <string>
+#include <fstream>
 
 #include "Grammar.h"
+#include "Store.h"
 
 /// <summary>
 /// FileWriter responsible for writing to .txt files only
@@ -22,7 +24,7 @@ public:
 	/// </summary>
 	/// <param name="file">file path</param>
 	/// <param name="arr">vector that stores the information to be written</param>
-	void write(const std::string& file, std::vector<Grammar>& arr);
+	void write(const std::string& file, Store* store);
 };
 
 #endif // !FILE_WRITER_H
