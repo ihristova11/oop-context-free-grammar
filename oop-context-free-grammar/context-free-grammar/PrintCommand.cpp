@@ -18,7 +18,7 @@ std::string PrintCommand::execute(const std::vector<std::string>& params)
 		Grammar* g = this->store->findGrammarById(id);
 		std::cout << g->toString() << std::endl;
 	}
-	return std::string();
+	return Constants::Success;
 }
 
 std::string PrintCommand::toString()

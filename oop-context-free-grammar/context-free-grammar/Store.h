@@ -20,6 +20,11 @@ public:
 	Grammar* findGrammarById(const std::string&);
 	
 	/// <summary>
+	/// clears vector values
+	/// </summary>
+	void clearGrammars();
+
+	/// <summary>
 	/// getter
 	/// </summary>
 	/// <returns>std::vector<Grammar*></returns>

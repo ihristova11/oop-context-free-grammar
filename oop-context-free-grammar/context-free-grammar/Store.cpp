@@ -13,6 +13,11 @@ Grammar* Store::findGrammarById(const std::string& id)
 	return nullptr;
 }
 
+void Store::clearGrammars()
+{
+	this->grammars.clear();
+}
+
 std::vector<Grammar*> Store::getGrammars()
 {
 	return this->grammars;

@@ -69,8 +69,8 @@ void CommandParser::seedCommands()
 	this->commands.push_back(new UnionCommand());
 
 	this->commands.push_back(new OpenCommand());
-	this->commands.push_back(new CloseCommand());
-	this->commands.push_back(new ExitCommand());
+	this->commands.push_back(new CloseCommand(this->store));
+	this->commands.push_back(new ExitCommand(this->store));
 	this->commands.push_back(new HelpCommand());
 	this->commands.push_back(new SaveAsCommand());
 	this->commands.push_back(new SaveCommand());

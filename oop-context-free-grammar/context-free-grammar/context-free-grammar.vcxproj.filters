@@ -84,9 +84,6 @@
     <ClCompile Include="SaveCommand.cpp">
       <Filter>Source Files\Commands\FileCommands</Filter>
     </ClCompile>
-    <ClCompile Include="ICommand.cpp">
-      <Filter>Source Files\Commands</Filter>
-    </ClCompile>
     <ClCompile Include="ListCommand.cpp">
       <Filter>Source Files\Commands</Filter>
     </ClCompile>

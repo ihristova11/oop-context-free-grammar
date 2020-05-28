@@ -161,7 +161,6 @@
     <ClCompile Include="FileWriter.cpp" />
     <ClCompile Include="Grammar.cpp" />
     <ClCompile Include="HelpCommand.cpp" />
-    <ClCompile Include="ICommand.cpp" />
     <ClCompile Include="IterCommand.cpp" />
     <ClCompile Include="ListCommand.cpp" />
     <ClCompile Include="OpenCommand.cpp" />
