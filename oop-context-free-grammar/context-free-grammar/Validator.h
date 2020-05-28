@@ -2,6 +2,9 @@
 #define VALIDATOR_H
 
 #include <string>
+#include <vector>
+
+#include "Grammar.h"
 
 /// <summary>
 /// Validator is a static class containing different functions for checking parameters validity
@@ -38,6 +41,14 @@ public:
 	/// <param name="min"></param>
 	/// <returns>bool</returns>
 	static bool isMinParametersCount(const int&, const int&);
+
+	/// <summary>
+	/// checks if there is grammar with this id in the collection
+	/// </summary>
+	/// <param name="id"></param>
+	/// <param name="grammars"></param>
+	/// <returns>bool</returns>
+	static bool isValidGrammarId(const std::string&, const std::vector<Grammar*>&);
 };
 
 #endif // !VALIDATOR_H

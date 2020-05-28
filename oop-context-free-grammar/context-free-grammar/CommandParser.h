@@ -4,6 +4,7 @@
 #include "ICommandParser.h"
 #include "FileWriter.h"
 #include "FileReader.h"
+#include "Store.h"
 
 #include <iostream>
 #include <sstream>
@@ -14,11 +15,12 @@
 class CommandParser : public ICommandParser
 {
 public:
-	CommandParser(FileReader*, FileWriter*);
+	CommandParser(Store*, FileReader*, FileWriter*);
 	virtual ~CommandParser();
 	virtual ICommand* parseCommand(const std::string&) override;
 	virtual std::vector<std::string> parseParameters(const std::string&) override;
 private:
+	Store* store;
 	std::vector<ICommand*> commands;
 	FileReader* reader;
 	FileWriter* writer;

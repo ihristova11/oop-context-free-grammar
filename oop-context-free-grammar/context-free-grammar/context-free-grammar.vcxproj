@@ -167,9 +167,11 @@
     <ClCompile Include="OpenCommand.cpp" />
     <ClCompile Include="PrintCommand.cpp" />
     <ClCompile Include="RemoveRuleCommand.cpp" />
+    <ClCompile Include="Rule.cpp" />
     <ClCompile Include="SaveAsCommand.cpp" />
     <ClCompile Include="SaveCommand.cpp" />
     <ClCompile Include="Startup.cpp" />
+    <ClCompile Include="Store.cpp" />
     <ClCompile Include="UnionCommand.cpp" />
     <ClCompile Include="Validator.cpp" />
   </ItemGroup>
@@ -196,8 +198,10 @@
     <ClInclude Include="OpenCommand.h" />
     <ClInclude Include="PrintCommand.h" />
     <ClInclude Include="RemoveRuleCommand.h" />
+    <ClInclude Include="Rule.h" />
     <ClInclude Include="SaveAsCommand.h" />
     <ClInclude Include="SaveCommand.h" />
+    <ClInclude Include="Store.h" />
     <ClInclude Include="UnionCommand.h" />
     <ClInclude Include="Validator.h" />
   </ItemGroup>

@@ -8,7 +8,7 @@ Engine::Engine()
 {
 	this->writer = new FileWriter();
 	this->reader = new FileReader();
-	this->parser = new CommandParser(this->reader, this->writer);
+	this->parser = new CommandParser(this->store, this->reader, this->writer);
 }
 
 Engine& Engine::getInstance()

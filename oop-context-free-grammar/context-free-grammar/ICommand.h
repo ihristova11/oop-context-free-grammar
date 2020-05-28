@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "Constants.h"
+#include "Store.h"
 
 /// <summary>
 /// ICommand interface to be implemented by different command instances
@@ -24,6 +25,8 @@ public:
 	/// </summary>
 	/// <returns>the command name</returns>
 	virtual std::string toString() = 0;
+protected:
+	Store* store;
 };
 
 #endif // !ICOMMAND_H

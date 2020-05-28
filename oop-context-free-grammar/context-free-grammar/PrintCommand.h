@@ -9,6 +9,8 @@
 class PrintCommand : public ICommand
 {
 public:
+	PrintCommand(Store*);
+
 	virtual std::string execute(const std::vector<std::string>&) override;
 	virtual std::string toString() override;
 };

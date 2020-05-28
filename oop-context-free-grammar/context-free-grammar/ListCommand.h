@@ -9,6 +9,8 @@
 class ListCommand : public ICommand
 {
 public:
+	ListCommand(Store*);
+
 	virtual std::string execute(const std::vector<std::string>&) override;
 	virtual std::string toString() override;
 };

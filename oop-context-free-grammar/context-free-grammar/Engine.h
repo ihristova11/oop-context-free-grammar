@@ -4,7 +4,7 @@
 #include "FileReader.h"
 #include "ICommandParser.h"
 #include "FileWriter.h"
-#include "Grammar.h"
+#include "Store.h"
 
 #include <string>
 #include <vector>
@@ -32,7 +32,7 @@ private:
 	Engine();
 	virtual ~Engine();
 
-	std::vector<Grammar*> grammars;
+	Store* store;
 	std::vector<ICommand*> commands;
 	ICommandParser* parser;
 	FileWriter* writer;

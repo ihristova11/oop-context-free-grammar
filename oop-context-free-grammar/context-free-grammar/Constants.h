@@ -30,6 +30,7 @@ namespace Constants
 	const std::string OpenCommandOnly = "You should open a file before entering other commands.";
 	const std::string InvalidCommand = "Enter a valid command.";
 	const std::string EnterCommand = "Enter a command: ";
+	const std::string Success = "Command completed successfully!";
 }
 
 #endif // !CONSTANTS_H

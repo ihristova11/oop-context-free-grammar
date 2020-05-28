@@ -19,8 +19,8 @@
 #include "SaveCommand.h"
 #include "HelpCommand.h"
 
-CommandParser::CommandParser(FileReader* reader, FileWriter* writer)
-	: reader(reader), writer(writer)
+CommandParser::CommandParser(Store* store, FileReader* reader, FileWriter* writer)
+	: store(store), reader(reader), writer(writer)
 {
 	seedCommands();
 }
@@ -56,15 +56,15 @@ std::vector<std::string> CommandParser::parseParameters(const std::string& fullC
 void CommandParser::seedCommands()
 {
 	// register commands
-	this->commands.push_back(new AddRuleCommand());
+	this->commands.push_back(new AddRuleCommand(this->store));
 	this->commands.push_back(new ChomskifyCommand());
 	this->commands.push_back(new ChomskyCommand());
 	this->commands.push_back(new ConcatCommand());
 	this->commands.push_back(new CykCommand());
 	this->commands.push_back(new EmptyCommand());
 	this->commands.push_back(new IterCommand());
-	this->commands.push_back(new ListCommand());
-	this->commands.push_back(new PrintCommand());
+	this->commands.push_back(new ListCommand(this->store));
+	this->commands.push_back(new PrintCommand(this->store));
 	this->commands.push_back(new RemoveRuleCommand());
 	this->commands.push_back(new UnionCommand());
 
