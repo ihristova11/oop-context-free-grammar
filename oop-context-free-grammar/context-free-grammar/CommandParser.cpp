@@ -72,7 +72,7 @@ void CommandParser::seedCommands()
 	this->commands.push_back(new CloseCommand(this->store));
 	this->commands.push_back(new ExitCommand(this->store));
 	this->commands.push_back(new HelpCommand());
-	this->commands.push_back(new SaveAsCommand());
+	this->commands.push_back(new SaveAsCommand(this->store, this->writer));
 	this->commands.push_back(new SaveCommand(this->store, this->writer));
 }
 
