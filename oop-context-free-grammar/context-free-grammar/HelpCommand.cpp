@@ -2,7 +2,7 @@
 
 std::string HelpCommand::execute(const std::vector<std::string>&)
 {
-	return std::string();
+	return Constants::HelpRensponse;
 }
 
 std::string HelpCommand::toString()
