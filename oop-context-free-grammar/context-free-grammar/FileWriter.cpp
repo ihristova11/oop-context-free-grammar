@@ -13,3 +13,12 @@ void FileWriter::write(const std::string& file, Store* store)
 
 	ofs.close();
 }
+
+void FileWriter::write(const std::string& file, Grammar* grammar)
+{
+	std::ofstream ofs;
+	ofs.open(file, std::ios::out);
+	ofs.seekp(0);
+	ofs << grammar->toString() << std::endl;
+	ofs.close();
+}

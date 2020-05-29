@@ -25,6 +25,13 @@ public:
 	/// <param name="file">file path</param>
 	/// <param name="arr">vector that stores the information to be written</param>
 	void write(const std::string& file, Store* store);
+
+	/// <summary>
+	/// writes to .txt file
+	/// </summary>
+	/// <param name="file">file path</param>
+	/// <param name="grammar">Grammar* to write</param>
+	void write(const std::string& file, Grammar* grammar);
 };
 
 #endif // !FILE_WRITER_H
