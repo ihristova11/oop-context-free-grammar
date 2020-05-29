@@ -26,7 +26,7 @@ Engine::~Engine()
 
 void Engine::start()
 {
-	seed(); // for testing purposes only
+	//seed(); // for testing purposes only
 
 	while (true)
 	{
@@ -79,6 +79,5 @@ void Engine::seed()
 	};
 	this->store = new Store(grammars);
 
-	this->writer->write("D:/Git/oop-context-free-grammar/oop-context-free-grammar/context-free-grammar/grammars.txt", this->store);
-	
+	this->writer->write("D:/Git/oop-context-free-grammar/oop-context-free-grammar/context-free-grammar/grammars.txt", this->store);	
 }

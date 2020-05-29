@@ -15,12 +15,12 @@ public:
 	Grammar(); // generate with unique id
 	Grammar(const std::vector<std::string>& e, const std::vector<std::string>& v,
 		const std::string& s, const std::vector<Rule*>& r);
+	Grammar(const std::string&, const std::vector<std::string>& e, const std::vector<std::string>& v,
+		const std::string& s, const std::vector<Rule*>& r);
+	Grammar(const Grammar&);
 	~Grammar();
 
-	///// <summary>
-	///// used for grammar id generation
-	///// </summary>
-	//static int grammarId;
+	void setId(const std::string&);
 
 	/// <summary>
 	/// getter

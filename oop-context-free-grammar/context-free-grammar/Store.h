@@ -19,6 +19,10 @@ public:
 	/// <returns>Grammar* or nullptr if not found</returns>
 	Grammar* findGrammarById(const std::string&);
 	
+	void addGrammar(const Grammar&);
+
+	Grammar* getGrammarAtIndex(const int&);
+
 	/// <summary>
 	/// clears vector values
 	/// </summary>

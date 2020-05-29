@@ -21,9 +21,32 @@ Grammar::Grammar(const std::vector<std::string>& e, const std::vector<std::strin
 	this->rules = r;
 }
 
+Grammar::Grammar(const std::string& id, const std::vector<std::string>& e, const std::vector<std::string>& v, const std::string& s, const std::vector<Rule*>& r)
+{
+	this->id = id;
+	this->variables = v;
+	this->terminals = e;
+	this->startVariable = s;
+	this->rules = r;
+}
+
+Grammar::Grammar(const Grammar& other)
+{
+	this->id = other.id;
+	this->terminals = other.terminals;
+	this->variables = other.variables;
+	this->rules = other.rules;
+	this->startVariable = other.startVariable;
+}
+
 Grammar::~Grammar()
 {
 	this->rules.clear();
+}
+
+void Grammar::setId(const std::string& id)
+{
+	this->id = id;
 }
 
 std::string Grammar::getId()
@@ -57,7 +80,6 @@ void Grammar::removeRule(const int& n)
 
 std::string Grammar::toString()
 {
-	// todo: implement -> should serialize the grammar
 	std::string res = this->id + "\n";
 	res.append(startVariable + "\n");
 	res.append(std::to_string(this->terminals.size()) + "\n");

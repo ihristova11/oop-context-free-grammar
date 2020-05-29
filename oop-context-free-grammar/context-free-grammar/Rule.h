@@ -10,6 +10,7 @@
 class Rule
 {
 public:
+	Rule(const std::string&);
 	Rule(const std::string&, const std::vector<std::string>&);
 
 	/// <summary>
@@ -20,6 +21,9 @@ public:
 private:
 	std::string nonTerminal; // S ->
 	std::vector<std::string> product; // aA
+
+	std::string createNonTerminal(const std::string&);
+	std::vector<std::string> createProduct(const std::string&);
 };
 
 #endif // !RULE_H

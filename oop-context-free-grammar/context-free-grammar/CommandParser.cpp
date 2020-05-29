@@ -68,13 +68,12 @@ void CommandParser::seedCommands()
 	this->commands.push_back(new RemoveRuleCommand(this->store));
 	this->commands.push_back(new UnionCommand());
 
-	this->commands.push_back(new OpenCommand());
+	this->commands.push_back(new OpenCommand(this->store, this->reader, this->writer));
 	this->commands.push_back(new CloseCommand(this->store));
 	this->commands.push_back(new ExitCommand(this->store));
 	this->commands.push_back(new HelpCommand());
 	this->commands.push_back(new SaveAsCommand());
-	this->commands.push_back(new SaveCommand());
-
+	this->commands.push_back(new SaveCommand(this->store, this->writer));
 }
 
 template <typename T>
