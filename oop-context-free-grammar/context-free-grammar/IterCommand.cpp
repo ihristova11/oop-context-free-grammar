@@ -18,7 +18,7 @@ std::string IterCommand::execute(const std::vector<std::string>& parameters)
 			//returns almost the same grammar
 			Grammar* iterGrammar = new Grammar(*g, true);
 			// generateNonTerminal() for new starterVariable
-			std::string generatedNT = store->generateNT('S');
+			std::string generatedNT = store->generateNT("S");
 			iterGrammar->setStartVariable(generatedNT);
 			// create rules
 			Rule r1 = { generatedNT, { "#" } };

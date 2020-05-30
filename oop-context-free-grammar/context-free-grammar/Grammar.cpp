@@ -74,6 +74,18 @@ void Grammar::setStartVariable(const std::string& sv)
 	this->startVariable = sv;
 }
 
+void Grammar::replace(const std::string& found, const std::string& repl, std::string& str)
+{
+	std::string res;
+	int index = 0;
+	while (true) {
+		index = str.find(found, index);
+		if (index == std::string::npos) break;
+		str.replace(index, found.size(), repl); // may break because of found.size() != repl.size()
+		index += repl.size();
+	}
+}
+
 int Grammar::getId()
 {
 	return id;
@@ -94,11 +106,35 @@ std::vector<std::string> Grammar::getVariables()
 	return this->variables;
 }
 
+void Grammar::renameDuplicates(const std::string& varName, const std::string& newVarName)
+{
+	if (this->startVariable == varName)	this->startVariable = newVarName;
+
+	for (Rule* r : this->rules)
+	{
+		if (r->getNonTerminal() == varName) r->setNonTerminal(newVarName);
+		for (std::string v : r->getProduct())
+		{
+			// find and replace string
+			this->replace(varName, newVarName, v);
+		}
+	}
+}
+
 bool Grammar::terminalExists(const std::string& t)
 {
 	for (std::string terminal : this->terminals)
 	{
 		if (terminal == t) return true;
+	}
+	return false;
+}
+
+bool Grammar::variableExists(const std::string& var)
+{
+	for (std::string s : this->variables)
+	{
+		if (s == var) return true;
 	}
 	return false;
 }

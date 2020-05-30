@@ -13,6 +13,9 @@ public:
 
 	virtual std::string execute(const std::vector<std::string>&) override;
 	virtual std::string toString() override;
+
+private:
+	std::vector<std::string> findDuplicates(Grammar* g1, Grammar* g2);
 };
 
 #endif // !UNION_COMMAND_H

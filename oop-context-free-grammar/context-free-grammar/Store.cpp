@@ -16,7 +16,7 @@ Grammar* Store::findGrammarById(const int& id)
 	return nullptr;
 }
 
-std::string Store::generateNT(char base)
+std::string Store::generateNT(const std::string& base)
 {
 	std::string newNT = "";
 	newNT += base;

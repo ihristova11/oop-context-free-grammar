@@ -29,7 +29,7 @@ CommandParser::~CommandParser()
 {
 	// delete commands
 
-	this->commands.clear(); // calls destructor for all commands
+	this->commands.clear(); // calls destructors
 	std::cout << "Command parser destructor called!" << std::endl;
 }
 

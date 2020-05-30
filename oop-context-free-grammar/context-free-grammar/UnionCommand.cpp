@@ -14,7 +14,7 @@ std::string UnionCommand::execute(const std::vector<std::string>& parameters)
 		int id2 = std::stoi(parameters[2]);
 
 		// check for grammars with ids
-		if (Validator::isValidGrammarId(id1, this->store->getGrammars()) 
+		if (Validator::isValidGrammarId(id1, this->store->getGrammars())
 			&& Validator::isValidGrammarId(id2, this->store->getGrammars()))
 		{
 			// find grammars
@@ -24,7 +24,7 @@ std::string UnionCommand::execute(const std::vector<std::string>& parameters)
 			// terminal check
 			if (g1->getTerminals().size() != g2->getTerminals().size())
 				return Constants::NoUnion;
-			
+
 			// terminals should be the same
 			for (std::string terminal1 : g1->getTerminals())
 			{
@@ -37,12 +37,33 @@ std::string UnionCommand::execute(const std::vector<std::string>& parameters)
 			// progress with union
 			// the result will be almost the same, just new startVar and more rules
 			Grammar* unionG = new Grammar(*g1, true); // generate new id
+			std::string generatedNT = store->generateNT("S"); // will be unique, no need to check for duplicates
+			unionG->setStartVariable(generatedNT);
 
-			// rename existing rules
-			// add renamed to the new grammar
-			// check the renaming algorithm 
+			// find variables with the same names
+			// save them in vector
+			std::vector<std::string> duplicates = this->findDuplicates(g1, g2);
 
+			// add them to the grammar
+			for (Rule* r : g1->getRules())
+			{
+				unionG->addRule(Rule(*r));
+			}
 
+			// rename them on the unionG
+
+			// rename added
+			for (std::string v : duplicates)
+			{
+				unionG->renameDuplicates(v,
+					store->generateNT(v));
+			}
+			
+			// no need to rename the second grammar rules, just add them
+			for (Rule* r : g2->getRules())
+			{
+				unionG->addRule(Rule(*r));
+			}
 
 		}
 		else return Constants::NoGrammar;
@@ -55,4 +76,21 @@ std::string UnionCommand::execute(const std::vector<std::string>& parameters)
 std::string UnionCommand::toString()
 {
 	return Constants::UnionCommandName;
+}
+
+std::vector<std::string> UnionCommand::findDuplicates(Grammar* g1, Grammar* g2)
+{
+	std::vector<std::string> duplicates;
+
+	if (g1->getStartVariable() == g2->getStartVariable()) duplicates.push_back(g1->getStartVariable());
+
+	for (std::string s : g1->getVariables())
+	{
+		if (g2->variableExists(s))
+		{
+			duplicates.push_back(s);
+		}
+	}
+
+	return duplicates;
 }

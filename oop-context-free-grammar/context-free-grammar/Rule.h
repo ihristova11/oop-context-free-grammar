@@ -14,11 +14,19 @@ public:
 	Rule(const int&, const std::string&);
 	Rule(const int&, const std::string&, const std::vector<std::string>&);
 	Rule(const std::string&, const std::vector<std::string>&);
+	Rule(const Rule&);
+	Rule& operator=(const Rule&);
 
 
 	int generateId();
 
 	int getId();
+	
+	std::string getNonTerminal();
+
+	std::vector<std::string> getProduct();
+
+	void setNonTerminal(const std::string&);
 
 	/// <summary>
 	/// toString() implementation

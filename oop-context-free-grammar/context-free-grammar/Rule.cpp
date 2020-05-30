@@ -24,6 +24,24 @@ Rule::Rule(const std::string& nonTerminal, const std::vector<std::string>& produ
 	this->id = this->generateId();
 }
 
+Rule::Rule(const Rule& other)
+{
+	this->id = other.id;
+	this->nonTerminal = other.nonTerminal;
+	this->product = other.product;
+}
+
+Rule& Rule::operator=(const Rule& other)
+{
+	if (this != &other)
+	{
+		this->id = other.id;
+		this->nonTerminal = other.nonTerminal;
+		this->product = other.product;
+	}
+	return *this;
+}
+
 int Rule::generateId()
 {
 	static int idC = 0;
@@ -33,6 +51,21 @@ int Rule::generateId()
 int Rule::getId()
 {
 	return id;
+}
+
+std::string Rule::getNonTerminal()
+{
+	return this->nonTerminal;
+}
+
+std::vector<std::string> Rule::getProduct()
+{
+	return this->product;
+}
+
+void Rule::setNonTerminal(const std::string& nt)
+{
+	this->nonTerminal = nt;
 }
 
 std::string Rule::toString()

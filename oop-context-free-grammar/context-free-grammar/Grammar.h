@@ -42,7 +42,11 @@ public:
 
 	std::vector<std::string> getVariables();
 
+	void renameDuplicates(const std::string&, const std::string&);
+
 	bool terminalExists(const std::string& t);
+
+	bool variableExists(const std::string& var);
 
 	std::vector<std::string> getTerminals();
 
@@ -77,6 +81,8 @@ private:
 	std::vector<Rule*> rules; // R
 
 	int generateId();
+	void replace(const std::string& found,
+		const std::string& repl, std::string& str); // should not be here ;) 
 };
 
 #endif // !GRAMMAR_H

@@ -20,7 +20,7 @@ public:
 	/// <returns>Grammar* or nullptr if not found</returns>
 	Grammar* findGrammarById(const int&);
 	
-	std::string generateNT(char base);
+	std::string generateNT(const std::string& base);
 
 	bool ntExists(const std::string&);
 
