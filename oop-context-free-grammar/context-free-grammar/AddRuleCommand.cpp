@@ -10,7 +10,7 @@ std::string AddRuleCommand::execute(const std::vector<std::string>& params)
 {
 	if (Validator::isValidParametersCount(3, params.size()))
 	{
-		std::string id = params[1];
+		int id = std::stoi(params[1]);
 		std::string rule = params[2]; // A->aA|Ab|AA todo: should be able to split this
 
 		if (Validator::isValidGrammarId(id, this->store->getGrammars()))

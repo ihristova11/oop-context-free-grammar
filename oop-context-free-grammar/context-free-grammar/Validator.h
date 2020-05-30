@@ -48,7 +48,7 @@ public:
 	/// <param name="id"></param>
 	/// <param name="grammars"></param>
 	/// <returns>bool</returns>
-	static bool isValidGrammarId(const std::string&, const std::vector<Grammar*>&);
+	static bool isValidGrammarId(const int&, const std::vector<Grammar*>&);
 };
 
 #endif // !VALIDATOR_H

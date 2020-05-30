@@ -11,7 +11,7 @@ PrintCommand::PrintCommand(Store* store)
 std::string PrintCommand::execute(const std::vector<std::string>& params)
 {
 	// validator
-	std::string id = params[1];
+	int id = std::stoi(params[1]);
 	if (Validator::isValidGrammarId(id, this->store->getGrammars()))
 	{
 		// find grammar

@@ -6,6 +6,7 @@
 
 Engine::Engine()
 {
+	this->store = new Store();
 	this->writer = new FileWriter();
 	this->reader = new FileReader();
 	this->parser = new CommandParser(this->store, this->reader, this->writer);
@@ -70,6 +71,7 @@ void Engine::processCommand(std::string commandAsString)
 	}
 }
 
+// for testing purposes only
 void Engine::seed()
 {
 	std::vector<Grammar*> grammars =

@@ -6,7 +6,7 @@ void FileReader::read(const std::string& file, Store* store)
 	int terminalsCount = 0;
 	int variablesCount = 0;
 	int rulesCount = 0;
-	std::string id;
+	int id;
 	std::string startVariable;
 	std::string variable;
 	std::vector<std::string> terminals;
@@ -22,8 +22,8 @@ void FileReader::read(const std::string& file, Store* store)
 		ifs >> grammarsCount;
 		for (size_t i = 0; i < grammarsCount; i++)
 		{
+			ifs >> id;
 			ifs.ignore();
-			std::getline(ifs, id);
 			std::getline(ifs, startVariable);
 
 			ifs >> terminalsCount;

@@ -11,7 +11,7 @@ std::string SaveCommand::execute(const std::vector<std::string>& parameters)
 {
 	if (parameters.size() > 2) // has parameters 
 	{
-		std::string id = parameters[1];
+		int id = std::stoi(parameters[1]);
 		if (Validator::isValidGrammarId(id, this->store->getGrammars()))
 		{
 			std::string file = parameters[2];

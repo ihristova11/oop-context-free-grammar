@@ -27,7 +27,7 @@ bool Validator::isMinParametersCount(const int& actual, const int& min)
 	return min <= actual;
 }
 
-bool Validator::isValidGrammarId(const std::string& id, const std::vector<Grammar*>& grammars)
+bool Validator::isValidGrammarId(const int& id, const std::vector<Grammar*>& grammars)
 {
 	for (Grammar* g : grammars)
 	{

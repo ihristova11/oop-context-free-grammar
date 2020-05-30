@@ -37,6 +37,7 @@ namespace Constants
 	const std::string NoGrammar = "No such grammar exists!";
 	const std::string NoRule = "Invalid rule index!";
 	const std::string InvalidFileName = "You can save only txt files.";
+	const std::string GrammarAdded = "Created grammar with id ";
 
 	const std::string ExitResponse = "Exiting the program...";
 	const std::string CloseSuccess = "Successfully closed file!";

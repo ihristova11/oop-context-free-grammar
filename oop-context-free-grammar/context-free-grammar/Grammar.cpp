@@ -2,26 +2,22 @@
 #include "Engine.h"
 
 Grammar::Grammar()
+	:terminals(), variables(), startVariable(), rules()
 {
-	// implement
-	static int grammarId = 0;
-	this->id = ++grammarId;
+	this->id = generateId();
 }
 
 Grammar::Grammar(const std::vector<std::string>& e, const std::vector<std::string>& v,
 	const std::string& s, const std::vector<Rule*>& r)
 {
-	// generate id for the grammar (may use static variable)
-	static int grammarId = 0;
-	this->id = ++grammarId;
-
+	this->id = generateId();
 	this->variables = v;
 	this->terminals = e;
 	this->startVariable = s;
 	this->rules = r;
 }
 
-Grammar::Grammar(const std::string& id, const std::vector<std::string>& e, const std::vector<std::string>& v, const std::string& s, const std::vector<Rule*>& r)
+Grammar::Grammar(const int& id, const std::vector<std::string>& e, const std::vector<std::string>& v, const std::string& s, const std::vector<Rule*>& r)
 {
 	this->id = id;
 	this->variables = v;
@@ -39,19 +35,48 @@ Grammar::Grammar(const Grammar& other)
 	this->startVariable = other.startVariable;
 }
 
+Grammar::Grammar(const Grammar& other, bool autoGenerateId)
+{
+	if (autoGenerateId)	this->id = generateId();
+	else this->id = other.id;
+
+	this->terminals = other.terminals;
+	this->variables = other.variables;
+	this->rules = other.rules;
+	this->startVariable = other.startVariable;
+}
+
+Grammar& Grammar::operator=(const Grammar& other)
+{
+	if (this != &other)
+	{
+		this->id = other.id;
+		this->terminals = other.terminals;
+		this->variables = other.variables;
+		this->rules = other.rules;
+		this->startVariable = other.startVariable;
+	}
+	return *this;
+}
+
 Grammar::~Grammar()
 {
 	this->rules.clear();
 }
 
-void Grammar::setId(const std::string& id)
+void Grammar::setId(const int& id)
 {
 	this->id = id;
 }
 
-std::string Grammar::getId()
+void Grammar::setStartVariable(const std::string& sv)
 {
-	return this->id;
+	this->startVariable = sv;
+}
+
+int Grammar::getId()
+{
+	return id;
 }
 
 std::vector<Rule*> Grammar::getRules()
@@ -59,23 +84,29 @@ std::vector<Rule*> Grammar::getRules()
 	return this->rules;
 }
 
+std::string Grammar::getStartVariable()
+{
+	return this->startVariable;
+}
+
+std::vector<std::string> Grammar::getVariables()
+{
+	return this->variables;
+}
+
 void Grammar::addRule(const std::string& r)
 {
-	// split the string and create a rule by given parameters
-	// destroy it in destructor
+	this->rules.push_back(new Rule(r));
+}
 
-	//todo: implement this!!!
-	std::string nonTerminal = "";
-	std::vector<std::string> product;
-
-	Rule* rule = new Rule(nonTerminal, product);
-
-	this->rules.push_back(rule);
+void Grammar::addRule(const Rule& r)
+{
+	this->rules.push_back(new Rule(r));
 }
 
 void Grammar::removeRule(const int& n)
 {
-	this->rules.erase(this->rules.begin() + n);
+	this->rules.erase(this->rules.begin() + n - 1);
 }
 
 std::string Grammar::toString()
@@ -95,11 +126,17 @@ std::string Grammar::toString()
 	}
 	res.append("\n");
 	res.append(std::to_string(this->rules.size()) + "\n");
-	for (size_t i = 0; i < this->rules.size(); i++)
+	for (Rule* r : this->rules)
 	{
-		res.append(std::to_string(i) + "\n");
-		res.append(this->rules[i]->toString() + "\n");
+		res.append(std::to_string(r->getId()) + "\n");
+		res.append(r->toString() + "\n");
 	}
 
 	return res;
+}
+
+int Grammar::generateId()
+{
+	static int grammarId = 0;
+	return ++grammarId;
 }

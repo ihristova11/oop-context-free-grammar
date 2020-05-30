@@ -62,7 +62,7 @@ void CommandParser::seedCommands()
 	this->commands.push_back(new ConcatCommand());
 	this->commands.push_back(new CykCommand());
 	this->commands.push_back(new EmptyCommand());
-	this->commands.push_back(new IterCommand());
+	this->commands.push_back(new IterCommand(this->store));
 	this->commands.push_back(new ListCommand(this->store));
 	this->commands.push_back(new PrintCommand(this->store));
 	this->commands.push_back(new RemoveRuleCommand(this->store));

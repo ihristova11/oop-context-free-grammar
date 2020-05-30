@@ -10,6 +10,7 @@
 class Store
 {
 public:
+	Store();
 	Store(const std::vector<Grammar*>&);
 
 	/// <summary>
@@ -17,8 +18,12 @@ public:
 	/// </summary>
 	/// <param name="id"></param>
 	/// <returns>Grammar* or nullptr if not found</returns>
-	Grammar* findGrammarById(const std::string&);
+	Grammar* findGrammarById(const int&);
 	
+	std::string generateNT(char base);
+
+	bool ntExists(const std::string&);
+
 	void addGrammar(const Grammar&);
 
 	Grammar* getGrammarAtIndex(const int&);

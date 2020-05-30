@@ -1,9 +1,12 @@
 #include "Store.h"
 
+Store::Store() : grammars()
+{ }
+
 Store::Store(const std::vector<Grammar*>& grammars) : grammars(grammars)
 { }
 
-Grammar* Store::findGrammarById(const std::string& id)
+Grammar* Store::findGrammarById(const int& id)
 {
 	for (Grammar* g : this->grammars)
 	{
@@ -11,6 +14,35 @@ Grammar* Store::findGrammarById(const std::string& id)
 			return g;
 	}
 	return nullptr;
+}
+
+std::string Store::generateNT(char base)
+{
+	std::string newNT = "";
+	newNT += base;
+
+	// append digit
+	newNT.append("_");
+	for (size_t i = 0; i < 200; i++)
+	{
+		if (!this->ntExists(newNT.append(std::to_string(i))))
+			return newNT.append(std::to_string(i));
+	}
+
+	return newNT;
+}
+
+bool Store::ntExists(const std::string& nt)
+{
+	for (Grammar* g : this->grammars)
+	{
+		if (g->getStartVariable() == nt) return true;
+		for (std::string s: g->getVariables())
+		{
+			if (s == nt) return true;
+		}
+	}
+	return false;
 }
 
 void Store::addGrammar(const Grammar& grammar)

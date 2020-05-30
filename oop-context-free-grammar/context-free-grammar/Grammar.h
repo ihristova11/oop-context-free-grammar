@@ -12,21 +12,25 @@
 class Grammar
 {
 public:
-	Grammar(); // generate with unique id
+	Grammar();
 	Grammar(const std::vector<std::string>& e, const std::vector<std::string>& v,
 		const std::string& s, const std::vector<Rule*>& r);
-	Grammar(const std::string&, const std::vector<std::string>& e, const std::vector<std::string>& v,
+	Grammar(const int&, const std::vector<std::string>& e, const std::vector<std::string>& v,
 		const std::string& s, const std::vector<Rule*>& r);
 	Grammar(const Grammar&);
+	Grammar(const Grammar&, bool);
+	Grammar& operator=(const Grammar&);
 	~Grammar();
 
-	void setId(const std::string&);
+	void setId(const int&);
+
+	void setStartVariable(const std::string&);
 
 	/// <summary>
 	/// getter
 	/// </summary>
 	/// <returns>id</returns>
-	std::string getId();
+	int getId();
 
 	/// <summary>
 	/// getter
@@ -34,11 +38,21 @@ public:
 	/// <returns>std::vector<Rule*></returns>
 	std::vector<Rule*> getRules();
 
+	std::string getStartVariable();
+
+	std::vector<std::string> getVariables();
+
 	/// <summary>
 	/// adds Rule* to the vector
 	/// </summary>
 	/// <param name="r">std::string param</param>
 	void addRule(const std::string&);
+
+	/// <summary>
+	/// adds Rule* to the vector
+	/// </summary>
+	/// <param name="r">Rule*</param>
+	void addRule(const Rule& r);
 
 	/// <summary>
 	/// removes Rule*
@@ -52,11 +66,13 @@ public:
 	/// <returns>std::string</returns>
 	std::string toString();
 private:
-	std::string id; // int ?
+	int id; // int ?
 	std::vector<std::string> terminals; // E
 	std::vector<std::string> variables; // chars? // V
 	std::string startVariable; // S
 	std::vector<Rule*> rules; // R
+
+	int generateId();
 };
 
 #endif // !GRAMMAR_H
