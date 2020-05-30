@@ -26,7 +26,7 @@ public:
 
 	void addGrammar(const Grammar&);
 
-	Grammar* getGrammarAtIndex(const int&);
+	Grammar* getGrammarById(const int&);
 
 	/// <summary>
 	/// clears vector values

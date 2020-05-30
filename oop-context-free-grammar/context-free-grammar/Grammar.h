@@ -42,6 +42,10 @@ public:
 
 	std::vector<std::string> getVariables();
 
+	bool terminalExists(const std::string& t);
+
+	std::vector<std::string> getTerminals();
+
 	/// <summary>
 	/// adds Rule* to the vector
 	/// </summary>

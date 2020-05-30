@@ -94,6 +94,20 @@ std::vector<std::string> Grammar::getVariables()
 	return this->variables;
 }
 
+bool Grammar::terminalExists(const std::string& t)
+{
+	for (std::string terminal : this->terminals)
+	{
+		if (terminal == t) return true;
+	}
+	return false;
+}
+
+std::vector<std::string> Grammar::getTerminals()
+{
+	return this->terminals;
+}
+
 void Grammar::addRule(const std::string& r)
 {
 	this->rules.push_back(new Rule(r));

@@ -51,7 +51,7 @@ void Store::addGrammar(const Grammar& grammar)
 	this->grammars.push_back(g);
 }
 
-Grammar* Store::getGrammarAtIndex(const int& index)
+Grammar* Store::getGrammarById(const int& index)
 {
 	if (index >= 0 && index < this->grammars.size())
 		return this->grammars[index];

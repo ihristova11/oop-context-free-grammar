@@ -66,7 +66,7 @@ void CommandParser::seedCommands()
 	this->commands.push_back(new ListCommand(this->store));
 	this->commands.push_back(new PrintCommand(this->store));
 	this->commands.push_back(new RemoveRuleCommand(this->store));
-	this->commands.push_back(new UnionCommand());
+	this->commands.push_back(new UnionCommand(this->store));
 
 	this->commands.push_back(new OpenCommand(this->store, this->reader, this->writer));
 	this->commands.push_back(new CloseCommand(this->store));
