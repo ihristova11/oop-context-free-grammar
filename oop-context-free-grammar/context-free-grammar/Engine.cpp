@@ -36,6 +36,24 @@ void Engine::start()
 		std::cout << Constants::EnterCommand;
 		std::getline(std::cin, commandString);
 
+		if ((this->parser)->parseCommand(commandString) != nullptr
+			&& (this->parser)->parseCommand(commandString)->toString()
+			== Constants::ExitCommandName)
+		{
+			this->processCommand(commandString);
+			break;
+		}
+
+		// can start with open command only
+		if ((this->parser)->parseCommand(commandString) != nullptr
+			&& (this->parser)->parseCommand(commandString)->toString()
+			!= Constants::OpenCommandName
+			&& begin)
+		{
+			std::cout << Constants::OpenCommandOnly << std::endl;
+			continue;
+		}
+
 		this->processCommand(commandString);
 	}
 }

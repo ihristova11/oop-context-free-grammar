@@ -17,6 +17,7 @@ std::string OpenCommand::execute(const std::vector<std::string>& parameters)
 		{
 			error = false;
 			this->reader->read(fileName, this->store);
+			this->updateLastFile(fileName);
 			return Constants::Success;
 		}
 	}
@@ -28,4 +29,9 @@ std::string OpenCommand::execute(const std::vector<std::string>& parameters)
 std::string OpenCommand::toString()
 {
 	return Constants::OpenCommandName;
+}
+
+void OpenCommand::updateLastFile(const std::string& file)
+{
+	this->writer->lastFile = file;
 }

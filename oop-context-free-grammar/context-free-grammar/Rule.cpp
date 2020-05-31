@@ -71,9 +71,10 @@ void Rule::setNonTerminal(const std::string& nt)
 std::string Rule::toString()
 {
 	std::string res = nonTerminal + "->";
-	for (std::string s : product)
+	for (size_t ind = 0; ind < this->product.size(); ind++)
 	{
-		res.append(s + " ");
+		res.append(this->product[ind]);
+		if (ind != this->product.size() - 1) res.append("|");
 	}
 	return res;
 }
@@ -89,7 +90,8 @@ std::string Rule::createNonTerminal(const std::string& fullRule)
 std::vector<std::string> Rule::createProduct(const std::string& fullRule)
 {
 	std::vector<std::string> product;
-	std::string pr = fullRule.substr(3);
+	size_t found = fullRule.find("->");
+	std::string pr = fullRule.substr(found + 2);
 
 	size_t pos = 0;
 	std::string res;

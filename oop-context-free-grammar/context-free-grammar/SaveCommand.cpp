@@ -1,7 +1,7 @@
 #include "SaveCommand.h"
 #include "Validator.h"
 
-SaveCommand::SaveCommand(Store*, FileWriter*)
+SaveCommand::SaveCommand(Store* store, FileWriter* writer)
 {
 	ICommand::store = store;
 	this->writer = writer;

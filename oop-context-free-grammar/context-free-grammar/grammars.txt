@@ -1,26 +1,36 @@
-3
+4
 S
 2
 a b 
 1
 S 
 1
-S->aSbb|SS|# 
+S->aSbb|SS|#
 
 S
 2
 a b 
+3
+S S A 
 2
-S A 
-2
-S->aSba|SS|# 
-A->a 
+S->aSba|SS|#
+A->a
 
 S
 2
 a c 
+4
+S S A S 
+1
+S->aSccc|SS|#
+
+S_0
+2
+a b 
 1
 S 
-1
-S->aSccc|SS|# 
+3
+S->aSbb|SS|#
+S_0->#
+S_0->S|S_0
 

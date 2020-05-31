@@ -19,6 +19,8 @@ public:
 private:
 	FileReader* reader;
 	FileWriter* writer;
+
+	void updateLastFile(const std::string&);
 };
 
 #endif // !OPEN_COMMAND_H
