@@ -74,20 +74,27 @@ $(function() {
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SAVE_AS_COMMAND_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;ICommand.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_save_as_command.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_save_as_command.html">SaveAsCommand</a> : <span class="keyword">public</span> <a class="code" href="class_i_command.html">ICommand</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">virtual</span> std::string <a class="code" href="class_save_as_command.html#a968e25c29e1de461c78d4d9195c99de7">execute</a>(<span class="keyword">const</span> std::vector&lt;std::string&gt;&amp;) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">virtual</span> std::string <a class="code" href="class_save_as_command.html#a5cd03658b6706718e2f38251f23abdcb">toString</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;};</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif // !SAVE_AS_COMMAND_H</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;FileWriter.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_save_as_command.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_save_as_command.html">SaveAsCommand</a> : <span class="keyword">public</span> <a class="code" href="class_i_command.html">ICommand</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="class_save_as_command.html">SaveAsCommand</a>(<a class="code" href="class_store.html">Store</a>*, <a class="code" href="class_file_writer.html">FileWriter</a>*);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">virtual</span> std::string <a class="code" href="class_save_as_command.html#a968e25c29e1de461c78d4d9195c99de7">execute</a>(<span class="keyword">const</span> std::vector&lt;std::string&gt;&amp;) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">virtual</span> std::string <a class="code" href="class_save_as_command.html#a5cd03658b6706718e2f38251f23abdcb">toString</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="class_file_writer.html">FileWriter</a>* writer;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif // !SAVE_AS_COMMAND_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclass_i_command_html"><div class="ttname"><a href="class_i_command.html">ICommand</a></div><div class="ttdoc">ICommand interface to be implemented by different command instances</div><div class="ttdef"><b>Definition:</b> ICommand.h:14</div></div>
-<div class="ttc" id="aclass_save_as_command_html"><div class="ttname"><a href="class_save_as_command.html">SaveAsCommand</a></div><div class="ttdoc">SaveAsCommand saves changes in a different file (should be .txt as well)</div><div class="ttdef"><b>Definition:</b> SaveAsCommand.h:10</div></div>
-<div class="ttc" id="aclass_save_as_command_html_a5cd03658b6706718e2f38251f23abdcb"><div class="ttname"><a href="class_save_as_command.html#a5cd03658b6706718e2f38251f23abdcb">SaveAsCommand::toString</a></div><div class="ttdeci">virtual std::string toString() override</div><div class="ttdoc">toString() implementation on command class</div><div class="ttdef"><b>Definition:</b> SaveAsCommand.cpp:8</div></div>
-<div class="ttc" id="aclass_save_as_command_html_a968e25c29e1de461c78d4d9195c99de7"><div class="ttname"><a href="class_save_as_command.html#a968e25c29e1de461c78d4d9195c99de7">SaveAsCommand::execute</a></div><div class="ttdeci">virtual std::string execute(const std::vector&lt; std::string &gt; &amp;) override</div><div class="ttdoc">execute() contains command specific execution logic</div><div class="ttdef"><b>Definition:</b> SaveAsCommand.cpp:3</div></div>
+<div class="ttc" id="aclass_store_html"><div class="ttname"><a href="class_store.html">Store</a></div><div class="ttdoc">Store class combining different grammar info as a single unit</div><div class="ttdef"><b>Definition:</b> Store.h:11</div></div>
+<div class="ttc" id="aclass_save_as_command_html"><div class="ttname"><a href="class_save_as_command.html">SaveAsCommand</a></div><div class="ttdoc">SaveAsCommand saves changes in a different file (should be .txt as well)</div><div class="ttdef"><b>Definition:</b> SaveAsCommand.h:11</div></div>
+<div class="ttc" id="aclass_save_as_command_html_a5cd03658b6706718e2f38251f23abdcb"><div class="ttname"><a href="class_save_as_command.html#a5cd03658b6706718e2f38251f23abdcb">SaveAsCommand::toString</a></div><div class="ttdeci">virtual std::string toString() override</div><div class="ttdoc">toString() implementation on command class</div><div class="ttdef"><b>Definition:</b> SaveAsCommand.cpp:29</div></div>
+<div class="ttc" id="aclass_save_as_command_html_a968e25c29e1de461c78d4d9195c99de7"><div class="ttname"><a href="class_save_as_command.html#a968e25c29e1de461c78d4d9195c99de7">SaveAsCommand::execute</a></div><div class="ttdeci">virtual std::string execute(const std::vector&lt; std::string &gt; &amp;) override</div><div class="ttdoc">execute() contains command specific execution logic</div><div class="ttdef"><b>Definition:</b> SaveAsCommand.cpp:9</div></div>
+<div class="ttc" id="aclass_file_writer_html"><div class="ttname"><a href="class_file_writer.html">FileWriter</a></div><div class="ttdoc">FileWriter responsible for writing to .txt files only</div><div class="ttdef"><b>Definition:</b> FileWriter.h:15</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

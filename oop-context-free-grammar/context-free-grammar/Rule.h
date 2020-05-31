@@ -16,15 +16,30 @@ public:
 	Rule& operator=(const Rule&);
 	~Rule();
 
-
+	/// <summary>
+	/// autogenerates id, not exposed to the user
+	/// </summary>
+	/// <returns>int id</returns>
 	int generateId();
 
+	/// <summary>
+	/// <returns>rule id</returns>
+	/// </summary>
 	int getId();
 	
+	/// <summary>
+	/// <returns>nonTerminal string</returns>
+	/// </summary>
 	std::string getNonTerminal();
 
+	/// <summary>
+	/// <returns>product vector<string></returns>
+	/// </summary>
 	std::vector<std::string> getProduct();
 
+	/// <summary>
+	/// sets the nonterminal value
+	/// </summary>
 	void setNonTerminal(const std::string&);
 
 	/// <summary>
@@ -37,7 +52,14 @@ private:
 	std::string nonTerminal; // S ->
 	std::vector<std::string> product; // aA
 
+	/// <summary>
+	/// creates nonterminal from full rule string
+	/// </summary>
 	std::string createNonTerminal(const std::string&);
+
+	/// <summary>
+	/// creates product from full rule string
+	/// </summary>
 	std::vector<std::string> createProduct(const std::string&);
 };
 

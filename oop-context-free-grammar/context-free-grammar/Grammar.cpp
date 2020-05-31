@@ -17,15 +17,6 @@ Grammar::Grammar(const std::vector<char>& e, const std::vector<std::string>& v,
 	this->rules = r;
 }
 
-Grammar::Grammar(const int& id, const std::vector<char>& e, const std::vector<std::string>& v, const std::string& s, const std::vector<Rule*>& r)
-{
-	this->id = id;
-	this->nonTerminals = v;
-	this->terminals = e;
-	this->startVariable = s;
-	this->rules = r;
-}
-
 Grammar::Grammar(const Grammar& other)
 {
 	this->id = other.id;
@@ -121,7 +112,7 @@ bool Grammar::terminalExists(const char& t)
 	return false;
 }
 
-bool Grammar::terminalExists(const std::string& var)
+bool Grammar::nonTerminalExists(const std::string& var)
 {
 	for (std::string s : this->nonTerminals)
 	{

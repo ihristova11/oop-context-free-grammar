@@ -105,10 +105,25 @@ $(function() {
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">const</span> std::string InvalidParameters = <span class="stringliteral">&quot;Please enter valid parameters!&quot;</span>;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">const</span> std::string NoGrammar = <span class="stringliteral">&quot;No such grammar exists!&quot;</span>;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">const</span> std::string NoRule = <span class="stringliteral">&quot;Invalid rule index!&quot;</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif // !CONSTANTS_H</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> std::string InvalidFileName = <span class="stringliteral">&quot;You can save only txt files.&quot;</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">const</span> std::string GrammarAdded = <span class="stringliteral">&quot;Created grammar with id &quot;</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">const</span> std::string NoUnion = <span class="stringliteral">&quot;Union cannot be performed on selected grammars!&quot;</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">const</span> std::string Empty = <span class="stringliteral">&quot;It&#39;s empty!&quot;</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">const</span> std::string NotEmpty = <span class="stringliteral">&quot;It&#39;s not empty!&quot;</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">const</span> std::string ExitResponse = <span class="stringliteral">&quot;Exiting the program...&quot;</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">const</span> std::string CloseSuccess = <span class="stringliteral">&quot;Successfully closed file!&quot;</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">const</span> std::string CykNotPossible = <span class="stringliteral">&quot;Grammar is not in Chomsky form, cannot proceed with CYK!&quot;</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">const</span> std::string WordInGrammar = <span class="stringliteral">&quot;Word is recognized.&quot;</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">const</span> std::string WordNotInGrammar = <span class="stringliteral">&quot;Word is not recognized.&quot;</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">const</span> std::string ToImplement = <span class="stringliteral">&quot;This command is about to be implemented!&quot;</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">const</span> std::string HelpRensponse = <span class="stringliteral">&quot;The following commands are supported:\n&gt;open &lt;file&gt; - opens &lt; file&gt;\n&gt;close - closes currently opened file\n&gt;save - saves the currently open file\n&gt;saveas &lt;file&gt; - saves the currently open file in &lt;file&gt;\n&gt;help - prints this information\n&gt;exit - exists the program\n&gt;list - displays a list of grammar ids\n&gt;print &lt;id&gt; - displays info for a grammar\n&gt;save &lt;id&gt; &lt;filename&gt; - saves grammar in file\n&gt;addRule &lt;id&gt; &lt;rule&gt; - adds rule\n&gt;removeRule &lt;id&gt; &lt;n&gt; - removes rule\n&gt;union &lt;id1&gt; &lt;id2&gt; - union on two grammars\n&gt;concat &lt;id1&gt; &lt;id2&gt; - concatenation on two grammars\n&gt;chomsky &lt;id&gt; - check if a grammar is in chomsky form\n&gt;cyk &lt;id&gt; - checks for a word is member of L(G)\n&gt;iter &lt;id&gt; - Kleene star on grammar\n&gt;empty &lt;id&gt; - checks if L(G) is empty\n&gt;chomskify &lt;id&gt; - converts grammar in chomsky form&quot;</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif // !CONSTANTS_H</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespace_constants_html"><div class="ttname"><a href="namespace_constants.html">Constants</a></div><div class="ttdoc">Stores constant std::strings</div><div class="ttdef"><b>Definition:</b> Constants.h:9</div></div>
 <!-- start footer part -->

@@ -115,7 +115,7 @@ std::vector<std::string> UnionCommand::findDuplicates(Grammar* g1, Grammar* g2)
 
 	for (std::string s : g1->getNonTerminals())
 	{
-		if (g2->terminalExists(s))
+		if (g2->nonTerminalExists(s))
 		{
 			duplicates.push_back(s);
 		}

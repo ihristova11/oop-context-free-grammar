@@ -83,10 +83,7 @@ void Engine::processCommand(std::string commandAsString)
 			this->begin = command->toString() == Constants::CloseCommandName;
 		}
 	}
-	else
-	{
-		std::cout << Constants::InvalidCommand << std::endl;
-	}
+	else std::cout << Constants::InvalidCommand << std::endl;
 }
 
 // for testing purposes only

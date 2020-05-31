@@ -78,9 +78,12 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aad4b763cac919ed01274d4e4edd79acf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_writer.html#aad4b763cac919ed01274d4e4edd79acf">write</a> (const std::string &amp;file, std::vector&lt; <a class="el" href="class_grammar.html">Grammar</a> &gt; &amp;arr)</td></tr>
-<tr class="memdesc:aad4b763cac919ed01274d4e4edd79acf"><td class="mdescLeft">&#160;</td><td class="mdescRight">writes to .txt file  <a href="class_file_writer.html#aad4b763cac919ed01274d4e4edd79acf">More...</a><br /></td></tr>
-<tr class="separator:aad4b763cac919ed01274d4e4edd79acf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4eea964d3ccf90230e7c97bf13a0f32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_writer.html#ac4eea964d3ccf90230e7c97bf13a0f32">write</a> (const std::string &amp;file, <a class="el" href="class_store.html">Store</a> *store)</td></tr>
+<tr class="memdesc:ac4eea964d3ccf90230e7c97bf13a0f32"><td class="mdescLeft">&#160;</td><td class="mdescRight">writes to .txt file  <a href="class_file_writer.html#ac4eea964d3ccf90230e7c97bf13a0f32">More...</a><br /></td></tr>
+<tr class="separator:ac4eea964d3ccf90230e7c97bf13a0f32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57b5430d2291e2e0cb051b1164b0fb1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_writer.html#a57b5430d2291e2e0cb051b1164b0fb1f">write</a> (const std::string &amp;file, <a class="el" href="class_grammar.html">Grammar</a> *grammar)</td></tr>
+<tr class="memdesc:a57b5430d2291e2e0cb051b1164b0fb1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">writes to .txt file  <a href="class_file_writer.html#a57b5430d2291e2e0cb051b1164b0fb1f">More...</a><br /></td></tr>
+<tr class="separator:a57b5430d2291e2e0cb051b1164b0fb1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -91,8 +94,8 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_file_writer.html" title="FileWriter responsible for writing to .txt files only">FileWriter</a> responsible for writing to .txt files only </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="aad4b763cac919ed01274d4e4edd79acf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad4b763cac919ed01274d4e4edd79acf">&#9670;&nbsp;</a></span>write()</h2>
+<a id="a57b5430d2291e2e0cb051b1164b0fb1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57b5430d2291e2e0cb051b1164b0fb1f">&#9670;&nbsp;</a></span>write() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -106,8 +109,45 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="class_grammar.html">Grammar</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>arr</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_grammar.html">Grammar</a> *&#160;</td>
+          <td class="paramname"><em>grammar</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>writes to .txt file </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>file path</td></tr>
+    <tr><td class="paramname">grammar</td><td>Grammar* to write</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac4eea964d3ccf90230e7c97bf13a0f32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4eea964d3ccf90230e7c97bf13a0f32">&#9670;&nbsp;</a></span>write() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FileWriter::write </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_store.html">Store</a> *&#160;</td>
+          <td class="paramname"><em>store</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

@@ -15,19 +15,19 @@ public:
 	Grammar();
 	Grammar(const std::vector<char>& e, const std::vector<std::string>& v,
 		const std::string& s, const std::vector<Rule*>& r);
-	Grammar(const int&, const std::vector<char>& e, const std::vector<std::string>& v,
-		const std::string& s, const std::vector<Rule*>& r);
 	Grammar(const Grammar&);
 	Grammar(const Grammar&, bool);
 	Grammar& operator=(const Grammar&);
 	~Grammar();
 
+	/// <summary>
+	/// sets start terminal value
+	/// </summary>
 	void setStartTerminal(const std::string&);
 
 	/// <summary>
-	/// getter
+	///  <returns>id</returns>
 	/// </summary>
-	/// <returns>id</returns>
 	int getId();
 
 	/// <summary>
@@ -36,16 +36,35 @@ public:
 	/// <returns>std::vector<Rule*></returns>
 	std::vector<Rule*> getRules();
 
+	/// <summary>
+	/// <returns>startNonTerminal</returns>
+	/// </summary>
 	std::string getStartNonTerminal();
 
+	/// <summary>
+	/// <returns>nonTerminals value</returns>
+	/// </summary>
 	std::vector<std::string> getNonTerminals();
 
+	/// <summary>
+	/// <returns>bool values if terminal exists</returns>
+	/// </summary>
 	bool terminalExists(const char& t);
 
-	bool terminalExists(const std::string& var);
+	/// <summary>
+	/// <returns>bool if nonterminal exists</returns>
+	/// </summary>
+	bool nonTerminalExists(const std::string& var);
 
+	/// <summary>
+	/// <returns>terminals</returns>
+	/// </summary>
 	std::vector<char> getTerminals();
 
+	/// <summary>
+	/// adds new nonterminal
+	/// </summary>
+	/// <returns>bool if the operation is successful</returns>
 	bool addNonTerminal(const std::string&);
 
 	/// <summary>
@@ -78,8 +97,20 @@ private:
 	std::string startVariable; // S
 	std::vector<Rule*> rules; // R
 
+	/// <summary>
+	/// autogenerates id, not exposed for the user to update it
+	/// </summary>
+	/// <returns>int id</returns>
 	int generateId();
+
+	/// <summary>
+	/// <returns>bool if string is nonterminal</returns>
+	/// </summary>
 	bool isNonTerminal(const std::string& s) const;
+
+	/// <summary>
+	/// <returns>bool if string is existing nonterminal</returns>
+	/// </summary>
 	bool isExistingNonTerminal(const std::string& nt) const;
 };
 
