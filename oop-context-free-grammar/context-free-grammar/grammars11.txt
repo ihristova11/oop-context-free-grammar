@@ -4,6 +4,5 @@ S
 a b 
 1
 S 
-1
-S->aSbb|SS|#
+0
 
