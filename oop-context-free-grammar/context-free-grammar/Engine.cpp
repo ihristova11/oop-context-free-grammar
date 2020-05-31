@@ -27,7 +27,7 @@ Engine::~Engine()
 
 void Engine::start()
 {
-	//seed(); // for testing purposes only
+	// seed(); // for testing purposes only
 
 	while (true)
 	{
@@ -61,7 +61,7 @@ void Engine::processCommand(std::string commandAsString)
 		else
 		{
 			std::string executionResult = command->execute(parameters);
-			std::cout << executionResult << std::endl;
+			std::cout << executionResult << std::endl << std::endl;
 			this->begin = command->toString() == Constants::CloseCommandName;
 		}
 	}
@@ -76,10 +76,16 @@ void Engine::seed()
 {
 	std::vector<Grammar*> grammars =
 	{
-		new Grammar(std::vector<std::string>{"a", "b"}, std::vector<std::string>(),
-		"S", std::vector<Rule*>{new Rule("S", std::vector<std::string>{"aSb|SS|e"})})
+		new Grammar(std::vector<char>{'a', 'b'}, std::vector<std::string>(),
+		"S", std::vector<Rule*>{new Rule("S", std::vector<std::string>{"aSbb|SS|#"})}),
+
+		new Grammar(std::vector<char>{'a', 'b'}, std::vector<std::string>{"A"},
+		"S", std::vector<Rule*>{new Rule("S", std::vector<std::string>{"aSba|SS|#"}), new Rule("A", std::vector<std::string> {"a"})}),
+
+		new Grammar(std::vector<char>{'a', 'c'}, std::vector<std::string>(),
+		"S", std::vector<Rule*>{new Rule("S", std::vector<std::string>{"aSccc|SS|#"})})
 	};
 	this->store = new Store(grammars);
 
-	this->writer->write("D:/Git/oop-context-free-grammar/oop-context-free-grammar/context-free-grammar/grammars.txt", this->store);	
+	this->writer->write("D:/Git/oop-context-free-grammar/oop-context-free-grammar/context-free-grammar/grammars.txt", this->store);
 }

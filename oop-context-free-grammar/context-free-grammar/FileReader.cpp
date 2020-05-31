@@ -6,11 +6,10 @@ void FileReader::read(const std::string& file, Store* store)
 	int terminalsCount = 0;
 	int variablesCount = 0;
 	int rulesCount = 0;
-	int id;
 	std::string startVariable;
 	std::string variable;
-	std::vector<std::string> terminals;
-	std::string terminal;
+	std::vector<char> terminals;
+	char terminal;
 	std::string rule;
 	std::vector<std::string> variables;
 	std::vector<Rule*> rules;
@@ -20,10 +19,9 @@ void FileReader::read(const std::string& file, Store* store)
 	if (ifs)
 	{
 		ifs >> grammarsCount;
+		ifs.ignore();
 		for (size_t i = 0; i < grammarsCount; i++)
 		{
-			ifs >> id;
-			ifs.ignore();
 			std::getline(ifs, startVariable);
 
 			ifs >> terminalsCount;
@@ -43,15 +41,17 @@ void FileReader::read(const std::string& file, Store* store)
 			ifs.ignore();
 			for (size_t i = 0; i < rulesCount; i++)
 			{
-				ifs.ignore();
 				ifs >> rule;
 				rules.push_back(new Rule(rule));
 			}
 
-			store->addGrammar(Grammar(id, terminals, variables, startVariable, rules));
+			store->addGrammar(Grammar(terminals, variables, startVariable, rules));
 			variable.clear();
 			terminals.clear();
 			rules.clear();
+
+			std::getline(ifs, startVariable);
+			std::getline(ifs, startVariable);
 		}
 	}
 	else
