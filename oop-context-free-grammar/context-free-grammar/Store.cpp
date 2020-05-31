@@ -6,6 +6,11 @@ Store::Store() : grammars()
 Store::Store(const std::vector<Grammar*>& grammars) : grammars(grammars)
 { }
 
+Store::~Store()
+{
+	this->grammars.clear();
+}
+
 Grammar* Store::findGrammarById(const int& id)
 {
 	for (Grammar* g : this->grammars)
@@ -54,23 +59,9 @@ bool Store::existsInCollection(const std::string& str, std::vector<std::string>&
 	return false;
 }
 
-std::vector<std::pair<std::string, std::string>> Store::crossJoin(const std::vector<std::string>& A, const std::vector<std::string>& B)
-{
-	std::vector<std::pair<std::string, std::string>> result;
-	for (unsigned i = 0; i < A.size(); i++) 
-	{
-		for (unsigned j = 0; j < B.size(); j++) 
-		{
-			std::pair<std::string, std::string> temp = { A[i], B[j] };
-			result.push_back(temp);
-		}
-	}
-	return result;
-}
-
 void Store::addGrammar(const Grammar& grammar)
 {
-	Grammar* g = new Grammar(grammar);
+	Grammar* g = new Grammar(grammar); // deleted in destr
 	this->grammars.push_back(g);
 }
 

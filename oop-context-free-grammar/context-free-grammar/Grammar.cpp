@@ -217,7 +217,7 @@ bool Grammar::addRule(const std::string& rule)
 
 void Grammar::addRule(const Rule& r)
 {
-	Rule* temp = new Rule(r); // delete
+	Rule* temp = new Rule(r); // deleted in destr
 	this->rules.push_back(temp);
 }
 
