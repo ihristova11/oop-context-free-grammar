@@ -7,17 +7,6 @@ Rule::Rule(const std::string& rule)
 	this->product = this->createProduct(rule);
 }
 
-Rule::Rule(const int& id, const std::string& rule)
-{
-	this->id = id;
-	this->nonTerminal = this->createNonTerminal(rule);
-	this->product = this->createProduct(rule);
-}
-
-Rule::Rule(const int& id, const std::string& nonTerminal, const std::vector<std::string>& product)
-	: id(id), nonTerminal(nonTerminal), product(product)
-{ }
-
 Rule::Rule(const std::string& nonTerminal, const std::vector<std::string>& product)
 	: nonTerminal(nonTerminal), product(product)
 {
@@ -40,6 +29,11 @@ Rule& Rule::operator=(const Rule& other)
 		this->product = other.product;
 	}
 	return *this;
+}
+
+Rule::~Rule()
+{
+	this->product.clear();
 }
 
 int Rule::generateId()

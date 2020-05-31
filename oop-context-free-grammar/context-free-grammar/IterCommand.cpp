@@ -21,10 +21,10 @@ std::string IterCommand::execute(const std::vector<std::string>& parameters)
 
 			std::string generatedNT = store->generateNT("S");
 			iterGrammar->addNonTerminal(generatedNT);
-			iterGrammar->setStartVariable(generatedNT);
+			iterGrammar->setStartTerminal(generatedNT);
 
 			Rule r1 = { generatedNT, { "#" } };
-			Rule r2 = { generatedNT, { g->getStartVariable(), generatedNT } };
+			Rule r2 = { generatedNT, { g->getStartNonTerminal(), generatedNT } };
 			iterGrammar->addRule(r1);
 			iterGrammar->addRule(r2);
 

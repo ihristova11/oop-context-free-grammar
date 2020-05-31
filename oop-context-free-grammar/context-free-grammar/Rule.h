@@ -11,11 +11,10 @@ class Rule
 {
 public:
 	Rule(const std::string&);
-	Rule(const int&, const std::string&);
-	Rule(const int&, const std::string&, const std::vector<std::string>&);
 	Rule(const std::string&, const std::vector<std::string>&);
 	Rule(const Rule&);
 	Rule& operator=(const Rule&);
+	~Rule();
 
 
 	int generateId();

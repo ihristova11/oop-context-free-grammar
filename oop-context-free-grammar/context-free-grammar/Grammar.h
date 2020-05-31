@@ -22,9 +22,7 @@ public:
 	Grammar& operator=(const Grammar&);
 	~Grammar();
 
-	void setId(const int&);
-
-	void setStartVariable(const std::string&);
+	void setStartTerminal(const std::string&);
 
 	/// <summary>
 	/// getter
@@ -38,21 +36,13 @@ public:
 	/// <returns>std::vector<Rule*></returns>
 	std::vector<Rule*> getRules();
 
-	std::string getStartVariable();
+	std::string getStartNonTerminal();
 
-	std::vector<std::string> getVariables();
-
-	bool ntExists(const std::string&);
-
-	bool isNonTerminal(const std::string& s) const;
-
-	bool isExistingNonTerminal(const std::string& nt) const;
-
-	void renameDuplicates(const std::string&, const std::string&);
+	std::vector<std::string> getNonTerminals();
 
 	bool terminalExists(const char& t);
 
-	bool variableExists(const std::string& var);
+	bool terminalExists(const std::string& var);
 
 	std::vector<char> getTerminals();
 
@@ -89,8 +79,8 @@ private:
 	std::vector<Rule*> rules; // R
 
 	int generateId();
-	void replace(const std::string& found,
-		const std::string& repl, std::string& str); // should not be here ;) 
+	bool isNonTerminal(const std::string& s) const;
+	bool isExistingNonTerminal(const std::string& nt) const;
 };
 
 #endif // !GRAMMAR_H

@@ -1,8 +1,6 @@
 #include "Grammar.h"
 #include "Engine.h"
 
-#include <sstream>
-
 Grammar::Grammar()
 	:terminals(), nonTerminals(), startVariable(), rules()
 {
@@ -66,26 +64,9 @@ Grammar::~Grammar()
 	this->rules.clear();
 }
 
-void Grammar::setId(const int& id)
-{
-	this->id = id;
-}
-
-void Grammar::setStartVariable(const std::string& sv)
+void Grammar::setStartTerminal(const std::string& sv)
 {
 	this->startVariable = sv;
-}
-
-void Grammar::replace(const std::string& found, const std::string& repl, std::string& str)
-{
-	std::string res;
-	int index = 0;
-	while (true) {
-		index = str.find(found, index);
-		if (index == std::string::npos) break;
-		str.replace(index, found.size(), repl); // may break because of found.size() != repl.size()
-		index += repl.size();
-	}
 }
 
 int Grammar::getId()
@@ -98,24 +79,14 @@ std::vector<Rule*> Grammar::getRules()
 	return this->rules;
 }
 
-std::string Grammar::getStartVariable()
+std::string Grammar::getStartNonTerminal()
 {
 	return this->startVariable;
 }
 
-std::vector<std::string> Grammar::getVariables()
+std::vector<std::string> Grammar::getNonTerminals()
 {
 	return this->nonTerminals;
-}
-
-bool Grammar::ntExists(const std::string& nt)
-{
-	if (this->getStartVariable() == nt) return true;
-	for (std::string s : this->getVariables())
-	{
-		if (s == nt) return true;
-	}
-	return false;
 }
 
 bool Grammar::isNonTerminal(const std::string& s) const
@@ -126,7 +97,7 @@ bool Grammar::isNonTerminal(const std::string& s) const
 	bool correctNumber = true;
 	for (unsigned i = 2; correctNumber && i < s.length() - 1; i++)
 	{
-		if (i == 2)	correctNumber = s[i] >= '1' && s[i] <= '9';		//A_0_ is considered incorrect
+		if (i == 2)	correctNumber = s[i] >= '1' && s[i] <= '9';
 		else correctNumber = s[i] >= '0' && s[i] <= '9';
 	}
 	return (s[0] >= 'A' && s[0] <= 'Z') && (s[1] == '_') && correctNumber && (s[s.length() - 1] == '_');
@@ -141,21 +112,6 @@ bool Grammar::isExistingNonTerminal(const std::string& nt) const
 	return false;
 }
 
-void Grammar::renameDuplicates(const std::string& varName, const std::string& newVarName)
-{
-	if (this->startVariable == varName)	this->startVariable = newVarName;
-
-	for (Rule* r : this->rules)
-	{
-		if (r->getNonTerminal() == varName) r->setNonTerminal(newVarName);
-		for (std::string v : r->getProduct())
-		{
-			// find and replace string
-			this->replace(varName, newVarName, v);
-		}
-	}
-}
-
 bool Grammar::terminalExists(const char& t)
 {
 	for (char terminal : this->terminals)
@@ -165,7 +121,7 @@ bool Grammar::terminalExists(const char& t)
 	return false;
 }
 
-bool Grammar::variableExists(const std::string& var)
+bool Grammar::terminalExists(const std::string& var)
 {
 	for (std::string s : this->nonTerminals)
 	{

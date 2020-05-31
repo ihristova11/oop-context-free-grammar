@@ -41,8 +41,8 @@ bool Store::ntExists(const std::string& nt)
 {
 	for (Grammar* g : this->grammars)
 	{
-		if (g->getStartVariable() == nt) return true;
-		for (std::string s: g->getVariables())
+		if (g->getStartNonTerminal() == nt) return true;
+		for (std::string s: g->getNonTerminals())
 		{
 			if (s == nt) return true;
 		}

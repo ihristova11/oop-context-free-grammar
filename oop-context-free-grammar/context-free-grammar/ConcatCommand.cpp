@@ -39,22 +39,22 @@ std::string ConcatCommand::execute(const std::vector<std::string>& parameters)
 			int id = concatG->getId();
 
 			// renaming step
-			std::map<std::string, std::string> renamedArr;
+			std::map<std::string, std::string> mapOldNew;
 
-			for (std::string s : g2->getVariables())
+			for (std::string s : g2->getNonTerminals())
 			{
 				if (!concatG->addNonTerminal(s))
 				{
 					std::string second = store->generateNT(s.substr(0, 1));
 					concatG->addNonTerminal(second);
-					renamedArr.emplace(s, second);
+					mapOldNew.emplace(s, second);
 				}
 			}
 
 			for (Rule* r : g2->getRules())
 			{
 				Rule* temp = r;
-				for (auto el : renamedArr) {
+				for (auto el : mapOldNew) {
 					if (temp->getNonTerminal() == el.first)
 						temp->getNonTerminal() = el.second;
 					for (auto kt : temp->getProduct()) {
@@ -67,17 +67,13 @@ std::string ConcatCommand::execute(const std::vector<std::string>& parameters)
 			}
 
 			std::string generatedNT = store->generateNT("S"); // will be unique, no need to check for duplicates
-			concatG->setStartVariable(generatedNT);
+			concatG->setStartTerminal(generatedNT);
 			concatG->addNonTerminal(generatedNT);
 
-			Rule temp1 = { generatedNT, {g1->getStartVariable(), g1->getStartVariable()} };
+			Rule temp1 = { generatedNT, {g1->getStartNonTerminal(), g1->getStartNonTerminal()} };
 
-
-			//Check if second grammar's starting symbol was renamed. 
-			//Only second grammar's symbols are renamed so this verification is not needed for first grammar's starting symbol.
-
-			for (auto jt : renamedArr) {
-				if (g2->getStartVariable() == jt.first) {
+			for (auto jt : mapOldNew) {
+				if (g2->getStartNonTerminal() == jt.first) {
 					//temp1.updateProductAt(1, jt.second);
 				}
 			}

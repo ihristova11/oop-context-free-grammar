@@ -39,12 +39,12 @@ std::string UnionCommand::execute(const std::vector<std::string>& parameters)
 			// the result will be almost the same, just new startVar and more rules
 			Grammar* unionG = new Grammar(*g1, true); // generate new id
 			std::string generatedNT = store->generateNT("S"); // will be unique, no need to check for duplicates
-			unionG->setStartVariable(generatedNT);
+			unionG->setStartTerminal(generatedNT);
 			int id = unionG->getId();
 
 			std::map<std::string, std::string> mapOldNew; //key: oldName, value: newName
 
-			for (std::string s : g2->getVariables())
+			for (std::string s : g2->getNonTerminals())
 			{
 				if (!unionG->addNonTerminal(s))
 				{
@@ -74,15 +74,12 @@ std::string UnionCommand::execute(const std::vector<std::string>& parameters)
 			//Add new starting symbol and its rules as in algorithm
 			std::string startingNonTerminal = store->generateNT("S");
 			unionG->addNonTerminal(startingNonTerminal);
-			unionG->setStartVariable(startingNonTerminal);
-			Rule temp1 = { startingNonTerminal, {g1->getStartVariable()} };
-			Rule temp2 = { startingNonTerminal, {g2->getStartVariable()} };
-
-			//Check if second grammar's starting symbol was renamed. 
-			//Only second grammar's symbols are renamed so this verification is not needed for first grammar's starting symbol.
+			unionG->setStartTerminal(startingNonTerminal);
+			Rule temp1 = { startingNonTerminal, {g1->getStartNonTerminal()} };
+			Rule temp2 = { startingNonTerminal, {g2->getStartNonTerminal()} };
 
 			for (auto el : mapOldNew) {
-				if (g2->getStartVariable() == el.first)
+				if (g2->getStartNonTerminal() == el.first)
 				{
 					//temp2.updateProductAt(0, el.second);
 				}
@@ -114,11 +111,11 @@ std::vector<std::string> UnionCommand::findDuplicates(Grammar* g1, Grammar* g2)
 {
 	std::vector<std::string> duplicates;
 
-	if (g1->getStartVariable() == g2->getStartVariable()) duplicates.push_back(g1->getStartVariable());
+	if (g1->getStartNonTerminal() == g2->getStartNonTerminal()) duplicates.push_back(g1->getStartNonTerminal());
 
-	for (std::string s : g1->getVariables())
+	for (std::string s : g1->getNonTerminals())
 	{
-		if (g2->variableExists(s))
+		if (g2->terminalExists(s))
 		{
 			duplicates.push_back(s);
 		}
