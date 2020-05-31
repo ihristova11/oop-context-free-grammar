@@ -1,0 +1,9 @@
+1. This is a simple console application. 
+
+2. Start the application and use the demo-commands.txt file to execute sample commands.
+Have in mind that the first command (open) should be updated with argument prior to the location of the project on your OS.
+Please use the grammars.txt file which is in the root directory of the project.
+
+3. The project documentation is located in the doxygen/html folder.
+Find the index.html file and open it. 
+It will open in your browser and you will be able to check the docs for more information.	

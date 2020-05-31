@@ -1,0 +1,31 @@
+open D:\Git\oop-context-free-grammar\oop-context-free-grammar\context-free-grammar\grammars.txt // UPDATE THIS PRIOR TO YOUR PROJECT ROOT DIR
+
+list
+
+addRule 1 A->a // WILL NOT BE EXECUTED, IT IS NOT A VALID RULE FOR GRAMMAR WITH ID 1
+
+addRule 1 S->b // WILL BE EXECUTED
+
+iter 1 2 // WILL NOT WORK, INVALID ARGUMENTS
+
+iter 1 // WILL CREATE A NEW GRAMMAR
+
+list 
+
+union 1 2 // WILL CREATE A NEW GRAMMAR
+
+union 1 3 // WILL NOT CREATE A NEW GRAMMAR, UNION IS NOT POSSIBLE
+
+concat 1 2 // WILL CREATE A NEW GRAMMAR
+
+concat 1 3 // WILL NOT CREATE A NEW GRAMMAR, CONCAT IS NOT POSSIBLE
+
+save
+
+close
+
+addRule 1 A->a // WILL NOT WORK, A FILE SHOULD BE OPENED FIRST
+
+save 1 D:\Git\oop-context-free-grammar\oop-context-free-grammar\context-free-grammar\grammars1.txt // FILEPATH SHOULD BE UPDATED PRIOR TO YOUR WORKING DIR
+
+exit
