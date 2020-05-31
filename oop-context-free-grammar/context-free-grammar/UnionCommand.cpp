@@ -71,7 +71,6 @@ std::string UnionCommand::execute(const std::vector<std::string>& parameters)
 				unionG->addRule(*temp);
 			}
 
-			//Add new starting symbol and its rules as in algorithm
 			std::string startingNonTerminal = store->generateNT("S");
 			unionG->addNonTerminal(startingNonTerminal);
 			unionG->setStartTerminal(startingNonTerminal);
