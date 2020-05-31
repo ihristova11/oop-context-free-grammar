@@ -19,10 +19,15 @@ public:
 	/// <param name="id"></param>
 	/// <returns>Grammar* or nullptr if not found</returns>
 	Grammar* findGrammarById(const int&);
-	
+
 	std::string generateNT(const std::string& base);
 
 	bool ntExists(const std::string&);
+
+	bool existsInCollection(const std::string&, std::vector<std::string>&);
+
+	//returns vector of pairs of strings where every string of first vector is related with every string of second vector
+	std::vector<std::pair <std::string, std::string>> crossJoin(const std::vector<std::string>& A, const std::vector<std::string>& B);
 
 	void addGrammar(const Grammar&);
 

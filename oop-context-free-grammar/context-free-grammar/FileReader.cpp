@@ -45,7 +45,7 @@ void FileReader::read(const std::string& file, Store* store)
 				rules.push_back(new Rule(rule));
 			}
 
-			store->addGrammar(Grammar(terminals, variables, startVariable, rules));
+			store->addGrammar({ terminals, variables, startVariable, rules });
 			variable.clear();
 			terminals.clear();
 			rules.clear();

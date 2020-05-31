@@ -1,26 +1,28 @@
 #include "Grammar.h"
 #include "Engine.h"
 
+#include <sstream>
+
 Grammar::Grammar()
-	:terminals(), variables(), startVariable(), rules()
+	:terminals(), nonTerminals(), startVariable(), rules()
 {
 	this->id = generateId();
 }
 
-Grammar::Grammar(const std::vector<std::string>& e, const std::vector<std::string>& v,
+Grammar::Grammar(const std::vector<char>& e, const std::vector<std::string>& v,
 	const std::string& s, const std::vector<Rule*>& r)
 {
 	this->id = generateId();
-	this->variables = v;
+	this->nonTerminals = v;
 	this->terminals = e;
 	this->startVariable = s;
 	this->rules = r;
 }
 
-Grammar::Grammar(const int& id, const std::vector<std::string>& e, const std::vector<std::string>& v, const std::string& s, const std::vector<Rule*>& r)
+Grammar::Grammar(const int& id, const std::vector<char>& e, const std::vector<std::string>& v, const std::string& s, const std::vector<Rule*>& r)
 {
 	this->id = id;
-	this->variables = v;
+	this->nonTerminals = v;
 	this->terminals = e;
 	this->startVariable = s;
 	this->rules = r;
@@ -30,7 +32,7 @@ Grammar::Grammar(const Grammar& other)
 {
 	this->id = other.id;
 	this->terminals = other.terminals;
-	this->variables = other.variables;
+	this->nonTerminals = other.nonTerminals;
 	this->rules = other.rules;
 	this->startVariable = other.startVariable;
 }
@@ -41,7 +43,7 @@ Grammar::Grammar(const Grammar& other, bool autoGenerateId)
 	else this->id = other.id;
 
 	this->terminals = other.terminals;
-	this->variables = other.variables;
+	this->nonTerminals = other.nonTerminals;
 	this->rules = other.rules;
 	this->startVariable = other.startVariable;
 }
@@ -52,7 +54,7 @@ Grammar& Grammar::operator=(const Grammar& other)
 	{
 		this->id = other.id;
 		this->terminals = other.terminals;
-		this->variables = other.variables;
+		this->nonTerminals = other.nonTerminals;
 		this->rules = other.rules;
 		this->startVariable = other.startVariable;
 	}
@@ -103,7 +105,40 @@ std::string Grammar::getStartVariable()
 
 std::vector<std::string> Grammar::getVariables()
 {
-	return this->variables;
+	return this->nonTerminals;
+}
+
+bool Grammar::ntExists(const std::string& nt)
+{
+	if (this->getStartVariable() == nt) return true;
+	for (std::string s : this->getVariables())
+	{
+		if (s == nt) return true;
+	}
+	return false;
+}
+
+bool Grammar::isNonTerminal(const std::string& s) const
+{
+	if (s.length() == 1) return s[0] >= 'A' && s[0] <= 'Z';
+	if (s.length() == 2 || s.length() == 3) return false;
+
+	bool correctNumber = true;
+	for (unsigned i = 2; correctNumber && i < s.length() - 1; i++)
+	{
+		if (i == 2)	correctNumber = s[i] >= '1' && s[i] <= '9';		//A_0_ is considered incorrect
+		else correctNumber = s[i] >= '0' && s[i] <= '9';
+	}
+	return (s[0] >= 'A' && s[0] <= 'Z') && (s[1] == '_') && correctNumber && (s[s.length() - 1] == '_');
+}
+
+bool Grammar::isExistingNonTerminal(const std::string& nt) const
+{
+	for (auto n : this->nonTerminals)
+	{
+		if (n == nt) return true;
+	}
+	return false;
 }
 
 void Grammar::renameDuplicates(const std::string& varName, const std::string& newVarName)
@@ -121,9 +156,9 @@ void Grammar::renameDuplicates(const std::string& varName, const std::string& ne
 	}
 }
 
-bool Grammar::terminalExists(const std::string& t)
+bool Grammar::terminalExists(const char& t)
 {
-	for (std::string terminal : this->terminals)
+	for (char terminal : this->terminals)
 	{
 		if (terminal == t) return true;
 	}
@@ -132,26 +167,58 @@ bool Grammar::terminalExists(const std::string& t)
 
 bool Grammar::variableExists(const std::string& var)
 {
-	for (std::string s : this->variables)
+	for (std::string s : this->nonTerminals)
 	{
 		if (s == var) return true;
 	}
 	return false;
 }
 
-std::vector<std::string> Grammar::getTerminals()
+std::vector<char> Grammar::getTerminals()
 {
 	return this->terminals;
 }
 
-void Grammar::addRule(const std::string& r)
+bool Grammar::addNonTerminal(const std::string& nt)
 {
-	this->rules.push_back(new Rule(r));
+	if (isNonTerminal(nt) && !isExistingNonTerminal(nt)) {
+		this->nonTerminals.push_back(nt);
+		return true;
+	}
+
+	return false;
+}
+
+bool Grammar::addRule(const std::string& rule)
+{
+	if (rule.empty()) return false;
+	size_t found = rule.find("->");
+	// not found
+	if (found == std::string::npos)	return false;
+
+	// get nt, before ->
+	std::string nt;
+	nt.assign(rule, 0, found);
+	// remove S->
+	std::string product = rule.substr(found + 2); 
+	// get product
+	std::vector<std::string> pResult;
+	std::istringstream iss(product);
+	for (std::string s; iss >> s; )
+		pResult.push_back(s);
+	Rule* r = new Rule{ nt, pResult };
+
+	this->rules.push_back(r);
+
+	return true;
+	// delete memory
+
 }
 
 void Grammar::addRule(const Rule& r)
 {
-	this->rules.push_back(new Rule(r));
+	Rule* temp = new Rule(r); // delete
+	this->rules.push_back(temp);
 }
 
 void Grammar::removeRule(const int& n)
@@ -161,16 +228,17 @@ void Grammar::removeRule(const int& n)
 
 std::string Grammar::toString()
 {
-	std::string res = this->id + "\n";
+	std::string res = ""; 
 	res.append(startVariable + "\n");
 	res.append(std::to_string(this->terminals.size()) + "\n");
-	for (std::string t : this->terminals)
+	for (char t : this->terminals)
 	{
-		res.append(t + " ");
+		res += t;
+		res.append(" ");
 	}
 	res.append("\n");
-	res.append(std::to_string(this->variables.size()) + "\n");
-	for (std::string v : this->variables)
+	res.append(std::to_string(this->nonTerminals.size()) + "\n");
+	for (std::string v : this->nonTerminals)
 	{
 		res.append(v + " ");
 	}
@@ -178,7 +246,6 @@ std::string Grammar::toString()
 	res.append(std::to_string(this->rules.size()) + "\n");
 	for (Rule* r : this->rules)
 	{
-		res.append(std::to_string(r->getId()) + "\n");
 		res.append(r->toString() + "\n");
 	}
 

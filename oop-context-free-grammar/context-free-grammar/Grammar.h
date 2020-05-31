@@ -13,9 +13,9 @@ class Grammar
 {
 public:
 	Grammar();
-	Grammar(const std::vector<std::string>& e, const std::vector<std::string>& v,
+	Grammar(const std::vector<char>& e, const std::vector<std::string>& v,
 		const std::string& s, const std::vector<Rule*>& r);
-	Grammar(const int&, const std::vector<std::string>& e, const std::vector<std::string>& v,
+	Grammar(const int&, const std::vector<char>& e, const std::vector<std::string>& v,
 		const std::string& s, const std::vector<Rule*>& r);
 	Grammar(const Grammar&);
 	Grammar(const Grammar&, bool);
@@ -42,19 +42,27 @@ public:
 
 	std::vector<std::string> getVariables();
 
+	bool ntExists(const std::string&);
+
+	bool isNonTerminal(const std::string& s) const;
+
+	bool isExistingNonTerminal(const std::string& nt) const;
+
 	void renameDuplicates(const std::string&, const std::string&);
 
-	bool terminalExists(const std::string& t);
+	bool terminalExists(const char& t);
 
 	bool variableExists(const std::string& var);
 
-	std::vector<std::string> getTerminals();
+	std::vector<char> getTerminals();
+
+	bool addNonTerminal(const std::string&);
 
 	/// <summary>
 	/// adds Rule* to the vector
 	/// </summary>
 	/// <param name="r">std::string param</param>
-	void addRule(const std::string&);
+	bool addRule(const std::string&);
 
 	/// <summary>
 	/// adds Rule* to the vector
@@ -75,8 +83,8 @@ public:
 	std::string toString();
 private:
 	int id; // int ?
-	std::vector<std::string> terminals; // E
-	std::vector<std::string> variables; // chars? // V
+	std::vector<char> terminals; // E
+	std::vector<std::string> nonTerminals; // V
 	std::string startVariable; // S
 	std::vector<Rule*> rules; // R
 

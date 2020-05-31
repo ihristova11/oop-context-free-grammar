@@ -57,11 +57,11 @@ void CommandParser::seedCommands()
 {
 	// register commands
 	this->commands.push_back(new AddRuleCommand(this->store));
-	this->commands.push_back(new ChomskifyCommand());
-	this->commands.push_back(new ChomskyCommand());
-	this->commands.push_back(new ConcatCommand());
-	this->commands.push_back(new CykCommand());
-	this->commands.push_back(new EmptyCommand());
+	this->commands.push_back(new ChomskifyCommand(this->store));
+	this->commands.push_back(new ChomskyCommand(this->store));
+	this->commands.push_back(new ConcatCommand(this->store));
+	this->commands.push_back(new CykCommand(this->store));
+	this->commands.push_back(new EmptyCommand(this->store));
 	this->commands.push_back(new IterCommand(this->store));
 	this->commands.push_back(new ListCommand(this->store));
 	this->commands.push_back(new PrintCommand(this->store));

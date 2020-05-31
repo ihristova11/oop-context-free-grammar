@@ -25,7 +25,7 @@ std::string Store::generateNT(const std::string& base)
 	newNT.append("_");
 	for (size_t i = 0; i < 200; i++)
 	{
-		if (!this->ntExists(newNT.append(std::to_string(i))))
+		if (!this->ntExists(newNT + std::to_string(i)))
 			return newNT.append(std::to_string(i));
 	}
 
@@ -45,16 +45,41 @@ bool Store::ntExists(const std::string& nt)
 	return false;
 }
 
+bool Store::existsInCollection(const std::string& str, std::vector<std::string>& collection)
+{
+	for (std::string s : collection)
+	{
+		if (s == str) return true;
+	}
+	return false;
+}
+
+std::vector<std::pair<std::string, std::string>> Store::crossJoin(const std::vector<std::string>& A, const std::vector<std::string>& B)
+{
+	std::vector<std::pair<std::string, std::string>> result;
+	for (unsigned i = 0; i < A.size(); i++) 
+	{
+		for (unsigned j = 0; j < B.size(); j++) 
+		{
+			std::pair<std::string, std::string> temp = { A[i], B[j] };
+			result.push_back(temp);
+		}
+	}
+	return result;
+}
+
 void Store::addGrammar(const Grammar& grammar)
 {
 	Grammar* g = new Grammar(grammar);
 	this->grammars.push_back(g);
 }
 
-Grammar* Store::getGrammarById(const int& index)
+Grammar* Store::getGrammarById(const int& id)
 {
-	if (index >= 0 && index < this->grammars.size())
-		return this->grammars[index];
+	for (Grammar * g : this->grammars)
+	{
+		if (g->getId() == id) return g;
+	}
 
 	return nullptr;
 }

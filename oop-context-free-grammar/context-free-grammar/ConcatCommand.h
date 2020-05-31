@@ -9,6 +9,8 @@
 class ConcatCommand : public ICommand
 {
 public:
+	ConcatCommand(Store*);
+
 	virtual std::string execute(const std::vector<std::string>&) override;
 	virtual std::string toString() override;
 };

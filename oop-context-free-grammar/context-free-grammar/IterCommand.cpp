@@ -17,21 +17,23 @@ std::string IterCommand::execute(const std::vector<std::string>& parameters)
 
 			//returns almost the same grammar
 			Grammar* iterGrammar = new Grammar(*g, true);
-			// generateNonTerminal() for new starterVariable
+			int id = iterGrammar->getId();
+
 			std::string generatedNT = store->generateNT("S");
+			iterGrammar->addNonTerminal(generatedNT);
 			iterGrammar->setStartVariable(generatedNT);
-			// create rules
+
 			Rule r1 = { generatedNT, { "#" } };
 			Rule r2 = { generatedNT, { g->getStartVariable(), generatedNT } };
-
-			// add rules to grammar
 			iterGrammar->addRule(r1);
 			iterGrammar->addRule(r2);
 
-			// add grammar to store
 			this->store->addGrammar(*iterGrammar);
 
-			return Constants::GrammarAdded + std::to_string(iterGrammar->getId()) + "!";
+			// delete
+			delete iterGrammar;
+
+			return Constants::GrammarAdded + std::to_string(id) + "!";
 		}
 		else return Constants::NoGrammar;
 	}

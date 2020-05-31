@@ -27,7 +27,7 @@ Engine::~Engine()
 
 void Engine::start()
 {
-	// seed(); // for testing purposes only
+	seed(); // for testing purposes only
 
 	while (true)
 	{
@@ -76,14 +76,14 @@ void Engine::seed()
 {
 	std::vector<Grammar*> grammars =
 	{
-		new Grammar(std::vector<char>{'a', 'b'}, std::vector<std::string>(),
-		"S", std::vector<Rule*>{new Rule("S", std::vector<std::string>{"aSbb|SS|#"})}),
+		new Grammar({'a', 'b'}, {"S"},
+		"S", std::vector<Rule*>{new Rule("S", {"aSbb|SS|#"})}),
 
-		new Grammar(std::vector<char>{'a', 'b'}, std::vector<std::string>{"A"},
-		"S", std::vector<Rule*>{new Rule("S", std::vector<std::string>{"aSba|SS|#"}), new Rule("A", std::vector<std::string> {"a"})}),
+		new Grammar({'a', 'b'}, {"S", "A"},
+		"S", std::vector<Rule*>{new Rule("S", {"aSba|SS|#"}), new Rule("A", {"a"})}),
 
-		new Grammar(std::vector<char>{'a', 'c'}, std::vector<std::string>(),
-		"S", std::vector<Rule*>{new Rule("S", std::vector<std::string>{"aSccc|SS|#"})})
+		new Grammar(std::vector<char>{'a', 'c'}, {"S"},
+		"S", std::vector<Rule*>{new Rule("S", {"aSccc|SS|#"})})
 	};
 	this->store = new Store(grammars);
 
