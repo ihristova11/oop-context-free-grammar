@@ -15,11 +15,6 @@ std::string CykCommand::execute(const std::vector<std::string>& parameters)
 		std::string word = parameters[2];
 		if (Validator::isValidGrammarId(id, this->store->getGrammars()))
 		{
-			/*Grammar* g = this->store->findGrammarById(id);
-			if (!g->chomsky()) {
-				return Constants::CykNotPossible;
-			}
-			*/
 			return Constants::ToImplement;
 		}
 		else return Constants::NoGrammar;

@@ -80,7 +80,10 @@ std::string Rule::toString()
 
 std::string Rule::createNonTerminal(const std::string& fullRule)
 {
-	return fullRule.substr(0, 1);
+	size_t found = fullRule.find("->");
+	std::string nt;
+	nt.assign(fullRule, 0, found);
+	return nt;
 }
 
 std::vector<std::string> Rule::createProduct(const std::string& fullRule)

@@ -195,24 +195,13 @@ bool Grammar::addRule(const std::string& rule)
 	size_t found = rule.find("->");
 	// not found
 	if (found == std::string::npos)	return false;
-
-	// get nt, before ->
 	std::string nt;
 	nt.assign(rule, 0, found);
-	// remove S->
-	std::string product = rule.substr(found + 2); 
-	// get product
-	std::vector<std::string> pResult;
-	std::istringstream iss(product);
-	for (std::string s; iss >> s; )
-		pResult.push_back(s);
-	Rule* r = new Rule{ nt, pResult };
+	if (!isExistingNonTerminal(nt)) return false;
 
+	Rule* r = new Rule(rule); // deleted in destr
 	this->rules.push_back(r);
-
 	return true;
-	// delete memory
-
 }
 
 void Grammar::addRule(const Rule& r)
