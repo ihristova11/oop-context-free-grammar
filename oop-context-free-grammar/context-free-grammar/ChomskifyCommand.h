@@ -9,6 +9,8 @@
 class ChomskifyCommand : public ICommand
 {
 public:
+	ChomskifyCommand(Store*);
+
 	virtual std::string execute(const std::vector<std::string>&) override;
 	virtual std::string toString() override;
 };

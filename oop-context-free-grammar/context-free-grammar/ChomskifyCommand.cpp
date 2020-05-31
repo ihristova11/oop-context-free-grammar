@@ -1,8 +1,15 @@
 #include "ChomskifyCommand.h"
+#include "Validator.h"
+#include <map>
 
-std::string ChomskifyCommand::execute(const std::vector<std::string>&)
+ChomskifyCommand::ChomskifyCommand(Store* store)
 {
-	return std::string();
+	ICommand::store = store;
+}
+
+std::string ChomskifyCommand::execute(const std::vector<std::string>& parameters)
+{
+	return Constants::ToImplement;
 }
 
 std::string ChomskifyCommand::toString()
